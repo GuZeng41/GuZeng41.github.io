@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="index,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：枚举 - Guzeng41的笔记</title>
+  <title>Calf Flac - Guzeng41的笔记</title>
+  
+    <meta name="keywords" content="回文,马拉车,回文自动机">
   
 
   
@@ -409,7 +409,7 @@
 
   
   
-      <div class='cover-wrapper  featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
@@ -485,8 +485,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">Calf Flac</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -514,7 +514,6 @@
 
         
         
-
 
 <aside class='l_side'>
   <div style="margin-bottom: 16px;border-radius: 8px;" class='shadow floatable widget_author desktop'>
@@ -681,7 +680,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Nov 15 2020 16:02:20 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Sun Nov 15 2020 16:02:19 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2020-11-15 日</div>
           
         </div>
@@ -743,83 +742,336 @@
 
   
 
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
 <div class='l_main'>
+  <article
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        Calf Flac
+      </h1>
+      <div class='new-meta-box'>
         
           
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/posts/26359.html">
-        题解04
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        P1212 [USACO1.4]铺放矩形块 Packing Rectangles题目描述给定 44 个矩形块，找出一个最小的封闭矩形将这 44 个矩形块放入，但不得相互重叠。所谓最小矩形指该矩形面积最小。
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://v1.alapi.cn/api/avatar?email=936018980&size=100">
+    <p>GuZeng41</p>
+  </a>
+</div>
 
-44 个矩形块中任一个矩形的边都与封闭矩形的边相平行，上图显示出了铺放 44 个矩形块的 66 种方案。
-这 66 种方案是唯一可能的基本铺放方案。因为其它方案能由基本方案通过旋转和镜像...
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月15日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
       
+      <div id="lc-pv" data-title="Calf Flac" data-path="/posts/15482.html">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+
+  
+  <h1 id="USACO-Training-1-3-3-Calf-Flac"><a href="#USACO-Training-1-3-3-Calf-Flac" class="headerlink" title="USACO Training 1.3.3 Calf Flac"></a>USACO Training 1.3.3 Calf Flac</h1><p>Description</p>
+<p>据说如果你给无限只母牛和无限台巨型便携式电脑(有非常大的键盘),那么母牛们会制造出世上最棒的回文。你的工作就是去寻找这些牛制造的奇观(最棒的回文)。</p>
+<p>在寻找回文时不用理睬那些标点符号、空格(但应该保留下来以便做为答案输出),只用考虑字母’A’-‘Z’和’a’-‘z’。要你寻找的最长的回文的文章是一个不超过20,000个字符的字符串。</p>
+<p>我们将保证最长的回文不会超过2,000个字符(在除去标点符号、空格之前)。</p>
+<p>Input</p>
+<p>输入文件不会超过20,000字符。这个文件可能一行或多行，但是每行都不超过80个字符(不包括最后的换行符)。</p>
+<p>Output</p>
+<p>输出的第一行应该包括找到的最长的回文的长度。</p>
+<p>下一行或几行应该包括这个回文的原文（没有除去标点符号、空格），把这个回文输出到一行或多行（如果回文中包括换行符）。</p>
+<p>如果有多个回文长度都等于最大值，输出最前面出现的那一个。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Confucius say:Madam,I&#39;m Adam.</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1  1</span><br><span class="line">Madam,I&#39;m Adam</span><br></pre></td></tr></table></figure>
+
+<p>题解：这题较麻烦，其实我觉得对我来说属于难题。。。</p>
+<p>我的原始思路：一行一行输入，筛选出字母并转换成小写，记录出最长回文的下标（判断回文和最大长度在子函数中进行）</p>
+<p>在解决时遇到如下问题：1  <strong>如何进行换行字符拼接呢？</strong></p>
+<p>最终查阅资料得到了对char[]和string 的拼接方法。</p>
+<p>对string:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(getline(<span class="built_in">cin</span>,c);getline(<span class="built_in">cin</span>,t);c+=<span class="string">&#x27;\n&#x27;</span>+t);</span><br></pre></td></tr></table></figure>
+
+<p>对char:(因为题目中一行最多80)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> org[<span class="number">200001</span>];</span><br><span class="line"><span class="keyword">char</span> line[<span class="number">90</span>];</span><br><span class="line"> <span class="keyword">while</span>(<span class="built_in">cin</span>.getline(line,<span class="number">88</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">strcat</span>(org,line);</span><br><span class="line">        <span class="built_in">strcat</span>(org,<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这题char[]和string 孰优孰劣呢？很显然是char[]更好，因为它可以快速存储’\n’输出时不用考虑’\n’，直接无脑输出就完了。</p>
+<p>这是我原来用string的同时没有优化的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> c,t;</span><br><span class="line"><span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pos;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">huiwen</span><span class="params">(<span class="built_in">string</span> c,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span>    <span class="comment">//输入字符串，xy坐标，判断回文</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s=<span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span>(y-x+<span class="number">1</span>&gt;<span class="number">2000</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (!(c[x]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;c[x]&lt;=<span class="string">&#x27;Z&#x27;</span>)||(c[x]&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;c[x]&lt;=<span class="string">&#x27;z&#x27;</span>))<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=x;i&lt;=y;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(c[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;c[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)c[i]=<span class="built_in">tolower</span>(c[i]),s+=c[i];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(c[i]&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;c[i]&lt;=<span class="string">&#x27;z&#x27;</span>)s+=c[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]!=s[s.length()-i<span class="number">-1</span>])<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxlen</span><span class="params">(<span class="built_in">string</span> c,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span>  <span class="comment">//计算最大长度</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=x;i&lt;=y;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((c[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;c[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)||(c[i]&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;c[i]&lt;=<span class="string">&#x27;z&#x27;</span>))sum++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);</span></span><br><span class="line">    <span class="keyword">int</span> maxl=<span class="number">0</span>,n=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(getline(<span class="built_in">cin</span>,c);getline(<span class="built_in">cin</span>,t);c+=<span class="string">&#x27;\n&#x27;</span>+t);</span><br><span class="line">    n=c.length();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span>  <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">register</span> <span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;i+<span class="number">2000</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(huiwen(c,i,j))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(maxlen(c,i,j)&gt;maxl)maxl=maxlen(c,i,j),pos.first=i,pos.second=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;maxl&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=pos.first;i&lt;=pos.second;i++)<span class="built_in">cout</span>&lt;&lt;c[i];</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>这边的话则是参考了题解并自己优化的思路，思想全部记录在注释中</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> org[<span class="number">20001</span>];   <span class="comment">//原字符串，char的好处是可以轻松存‘\n’</span></span><br><span class="line"><span class="keyword">char</span> line[<span class="number">90</span>];     <span class="comment">//临时存储每行字符串</span></span><br><span class="line"><span class="keyword">int</span> pos[<span class="number">20001</span>];    <span class="comment">//记录字母在原字符串中的位置</span></span><br><span class="line"><span class="keyword">char</span> pur[<span class="number">20001</span>];   <span class="comment">//处理回文的只有小写字母的数组</span></span><br><span class="line"><span class="keyword">int</span> pl=<span class="number">0</span>;       <span class="comment">//字母总数</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">chk</span><span class="params">(<span class="keyword">int</span> st,<span class="keyword">int</span> length)</span>          <span class="comment">//判断是否为回文，st为最长回文开始位置</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(st+length&gt;pl)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length/<span class="number">2</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(pur[i+st]!=pur[st+length-i<span class="number">-1</span>])</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>.getline(line,<span class="number">88</span>))   <span class="comment">//输入,换行则接用line拼接</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">strcat</span>(org,line);</span><br><span class="line">        <span class="built_in">strcat</span>(org,<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> length=<span class="built_in">strlen</span>(org);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(org[i]&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;org[i]&lt;=<span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            pur[pl]=org[i];</span><br><span class="line">            pos[pl]=i;                   <span class="comment">//记录字母在原数组中的位置</span></span><br><span class="line">            pl++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(org[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;org[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)     <span class="comment">//大写转小写</span></span><br><span class="line">        &#123;</span><br><span class="line">            pur[pl]=<span class="built_in">tolower</span>(org[i]);</span><br><span class="line">            pos[pl]=i;</span><br><span class="line">            pl++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxn=<span class="number">-1</span>,st=<span class="number">0</span>;         <span class="comment">//st记录最长回文的初始位置</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pl;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=maxn+<span class="number">1</span>;j&lt;=<span class="number">2010</span>;j++)       <span class="comment">//回文只有两千长度，同时比maxn短的就算是回文也没用，直接跳过</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(chk(i,j)&amp;&amp;j&gt;maxn)      <span class="comment">//是回文且更长</span></span><br><span class="line">            &#123;</span><br><span class="line">                maxn=j;</span><br><span class="line">                st=i;                <span class="comment">//直接从当前位置循环（之前没有更长的）</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;maxn&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=pos[st];i&lt;=pos[st+maxn<span class="number">-1</span>];i++)   <span class="comment">//char不用像string那样讨论换行，较方便</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;org[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+  
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\posts\17772.html" title="Broken Necklace" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Broken Necklace</span></a><a class="item" href="\posts\25719.html" title="题解02" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/01.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/01.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解02</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/posts/15482.html>http://example.com/posts/15482.html</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-11-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E5%91%A8%E9%A2%98%E8%A7%A3/">每周题解</a>
-        
-      </div>
+  
+  
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
       
-        <div>
-            <a class='readmore' href='/posts/26359.html'>
-            阅读全文
-          </a>
-        </div>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T16:01:43+08:00">
+  <a class='notlink'>
+    <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%9E%E6%96%87/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>回文</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%A9%AC%E6%8B%89%E8%BD%A6/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>马拉车</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%9E%E6%96%87%E8%87%AA%E5%8A%A8%E6%9C%BA/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>回文自动机</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/posts/15482.html&title=Calf Flac - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/posts/15482.html&title=Calf Flac - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/posts/15482.html&title=Calf Flac - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
+  </div>
+
+
+  
   
 
+  
+  <div class="prev-next">
+    
+    
+    <a class='next' href='/posts/17772.html'>
+      <p class='title'>Broken Necklace<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>USACO Training 1.1.4 Broken NecklaceDescription
+你有一条由N个红色的，白色的，或蓝色的珠子组成的项链(3&lt;=N&lt;=350)，珠子是随意...</p>
+    </a>
+    
+  </div>
+  
+</article>
+
+
+
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fal fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
       </div>
       
   
