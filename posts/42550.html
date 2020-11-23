@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/1.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>题解05 - Guzeng41的笔记</title>
+  
+
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Guzeng41的笔记" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heson525/fontawesome-pro@5.13.1/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" media="print" onload="this.media='all'">
+  
+
+
+  <!-- import link -->
+  
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.2.0/styles/a11y-dark.css">
+
+    
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <!-- 脚本懒加载函数 -->
+    <script>
+      function loadScript(src, cb) {
+        var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+        var script = document.createElement('script');
+        script.setAttribute('type','text/javascript');
+        if (cb) script.onload = cb;
+        script.setAttribute('src', src);
+        HEAD.appendChild(script);
+      }
+       </script>
+    
+</head>
+  <div id="clickCanvas" style=" position:fixed;left:0;top:0;z-index:999999999;pointer-events:none;"></div>
+<body>
+  <header class="l_header auto shadow floatable blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            GuZeng41笔记
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fal fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fal fa-search fa-fw'></i>找文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fal fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fal fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fal fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/guestbook/
+                  
+                  
+                  
+                    id="guestbook"
+                  >
+                  <i class='fal fa-comments fa-fw'></i>留言板
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/links/
+                  
+                  
+                  
+                    id="links"
+                  >
+                  <i class='fal fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/bb/
+                  
+                  
+                  
+                    id="bb"
+                  >
+                  <i class='fal fa-microphone-alt fa-fw'></i>说说
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fal fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fal fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fal fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fal fa-search fa-fw'></i>找文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fal fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fal fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fal fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/guestbook/
+                  
+                  
+                  
+                    id="guestbook"
+                  >
+                  <i class='fal fa-comments fa-fw'></i>留言板
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/links/
+                  
+                  
+                  
+                    id="links"
+                  >
+                  <i class='fal fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/bb/
+                  
+                  
+                  
+                    id="bb"
+                  >
+                  <i class='fal fa-microphone-alt fa-fw'></i>说说
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post featured' style="display: none;">
+        <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Guzeng41 的笔记</p>
+    
+    
+      <p class="subtitle">只想ac的小咸鱼</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fad fa-home fa-fw'></i><p>首页</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              id="categories">
+              <i class='fad fa-folder-open fa-fw'></i><p>分类</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fad fa-tags fa-fw'></i><p>标签</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fad fa-archive fa-fw'></i><p>归档</p>
+            </a>
+          
+            <a href="/bb/"
+              
+              
+              id="bb">
+              <i class='fad fa-microphone-alt fa-fw'></i><p>说说</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">题解05</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "half") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "full") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<aside class='l_side'>
+  <div style="margin-bottom: 16px;border-radius: 8px;" class='shadow floatable widget_author desktop'>
+    <div id="zuozhebg" class="newauthor"
+      style="background: url(https://v1.alapi.cn/api/avatar?email=936018980&size=100) center center no-repeat;background-size:cover">
+    </div>
+    <div class="relive_widget_v3">
+      <div class="box-author-info">
+        <div class="author-face">
+          <a href="/about" target="_blank" rel="nofollow" title="关于GuZeng41">
+            <img no-lazy alt="" src="https://v1.alapi.cn/api/avatar?email=936018980&size=100"
+              class="avatar avatar-200 photo" height="200" width="200"> </a>
+        </div>
+        <div class="author-name">GuZeng41</div>
+        <div id="author-one" class="author-one">
+         一个笔记网站
+
+
+        </div>
+        <div class="site-state-wrap motion-element">
+          <nav class="site-state">
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  
+  
+    
+    
+  
+
+  <section class="widget category shadow floatable desktop">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fal fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/USACO/" href="/categories/USACO/"
+            id="categoriesUSACO"
+            ><div class='name'>USACO</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%AF%8F%E5%91%A8%E9%A2%98%E8%A7%A3/" href="/categories/%E6%AF%8F%E5%91%A8%E9%A2%98%E8%A7%A3/"
+            id="categoriesE6AF8FE591A8E9A298E8A7A3"
+            ><div class='name'>每周题解</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+
+  
+    
+    
+
+<section class="widget text shadow floatable desktop">
+  
+  <header>
+    
+      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <div id="hot-comments"></div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>12 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2020/11/09'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>52.5k 字</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          
+            <div id="last-update" style="display: none;">Mon Nov 23 2020 12:07:18 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2020-11-23 日</div>
+          
+        </div>
+        
+        <script>
+          function timeago(dateTimeStamp) {
+              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
+              var hour = minute * 60;
+              var day = hour * 24;
+              var week = day * 7;
+              var month = day * 30;
+              var now = new Date().getTime(); //获取当前时间毫秒
+              var diffValue = now - dateTimeStamp; //时间差
+              if (diffValue < 0) {
+                  return;
+              }
+              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
+              var hourC = diffValue / hour;
+              var dayC = diffValue / day;
+              var weekC = diffValue / week;
+              var monthC = diffValue / month;
+              if (monthC >= 1 && monthC <= 3) {
+                  result = " " + parseInt(monthC) + " 月前"
+              } else if (weekC >= 1 && weekC <= 3) {
+                  result = " " + parseInt(weekC) + " 周前"
+              } else if (dayC >= 1 && dayC <= 6) {
+                  result = " " + parseInt(dayC) + " 天前"
+              } else if (hourC >= 1 && hourC <= 23) {
+                  result = " " + parseInt(hourC) + " 小时前"
+              } else if (minC >= 1 && minC <= 59) {
+                  result = " " + parseInt(minC) + " 分钟前"
+              } else if (diffValue >= 0 && diffValue <= minute) {
+                  result = "刚刚"
+              } else {
+                  var datetime = new Date();
+                  datetime.setTime(dateTimeStamp);
+                  var Nyear = datetime.getFullYear();
+                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+                  result = Nyear + "-" + Nmonth + "-" + Ndate
+              }
+              return result;
+          }
+          var lastUpDate = document.getElementById('last-update').innerHTML;
+          try {
+            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
+          } catch (error) {
+            document.getElementById('last-update-show').innerHTML = '2020-11-23 日';
+          }
+        </script>
+        
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AADFS%E6%A8%A1%E6%9D%BF"><span class="toc-text">这是一个DFS模板</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<div class='l_main'>
+  <article
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        题解05
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://v1.alapi.cn/api/avatar?email=936018980&size=100">
+    <p>GuZeng41</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fal fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E6%AF%8F%E5%91%A8%E9%A2%98%E8%A7%A3/">每周题解</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月23日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="题解05" data-path="/posts/42550.html">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+
+  
+  <h1 id="USACO-Training-1-5-4-Checker-Challenge"><a href="#USACO-Training-1-5-4-Checker-Challenge" class="headerlink" title="USACO Training 1.5.4 Checker Challenge"></a>USACO Training 1.5.4 Checker Challenge</h1><p>Description</p>
+<p>检查一个如下的6 x 6的跳棋棋盘，有六个棋子被放置在棋盘上，使得每行、每列只有一个，每条对角线(包括两条主对角线的所有对角线)上至多有一个棋子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   1    2   3   4   5   6</span><br><span class="line">---------------------------</span><br><span class="line">1 |   | O |   |   |   |   |</span><br><span class="line">---------------------------</span><br><span class="line">2 |   |   |   | O |   |   |</span><br><span class="line">---------------------------</span><br><span class="line">3 |   |   |   |   |   | O |</span><br><span class="line">---------------------------</span><br><span class="line">4 | O |   |   |   |   |   |</span><br><span class="line">---------------------------</span><br><span class="line">5 |   |   | O |   |   |   |</span><br><span class="line">---------------------------</span><br><span class="line">6 |   |   |   |   | O |   |</span><br></pre></td></tr></table></figure>
+
+<p>上面的布局可以用序列2 4 6 1 3 5来描述，第i个数字表示在第i行的相应位置有一个棋子，如下：</p>
+<p>行号 1 2 3 4 5 6</p>
+<p>列号 2 4 6 1 3 5</p>
+<p>这只是跳棋放置的一个解。请编一个程序找出所有跳棋放置的解。并把它们以上面的序列方法输出。解按字典顺序排列。请输出前3个解。最后一行是解的总个数。</p>
+<p>Input</p>
+<p>一个数字N (6 &lt;= N &lt;= 13) 表示棋盘是N x N大小的。</p>
+<p>Output</p>
+<p>前三行为前三个解，每个解的两个数字之间用一个空格隔开。第四行只有一个数字，表示解的总数。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6 </span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 4 6 1 3 5 </span><br><span class="line">3 6 2 5 1 4 </span><br><span class="line">4 1 5 2 6 3 </span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<p>Hint</p>
+<p>特别注意: 对于更大的N(棋盘大小N x N)你的程序应当改进得更有效。 不要使用打表法</p>
+<p>题解：本题是一道经典的dfs好题。思路为：从第一行开始放，放一个位置，判断合法之后放下一行，直到放完n行为止。</p>
+<p>思路是很简单，但是我踩了挺多坑的。</p>
+<p>剪枝采用的思路是直接循环判断坐标是否在同一行列对角线上，复杂度较高</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> l[<span class="number">50</span>]=&#123;<span class="number">0</span>&#125;,cnt=<span class="number">0</span>,n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;y;i++)<span class="keyword">if</span>(x==l[i]||<span class="built_in">abs</span>(l[i]-x)==<span class="built_in">abs</span>(i-y))<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myprint</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">cout</span>&lt;&lt;l[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(r==n+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="keyword">if</span>(cnt&lt;=<span class="number">3</span>)myprint();</span><br><span class="line">        <span class="comment">//memset(l,0,sizeof(l));思考：这句话究竟要不要加？</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">if</span>(check(i,r))l[r]=i,dfs(r+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    dfs(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>事实上刚刚写的时候还踩了坑</p>
+<p>首先是我在代码中注释位置写上给l数组（记录某一行放的是第几列，也就是x坐标）在每一种正确情况后面都将他们归零，显然这是不正确的，为什么呢？因为l数组中还存储着前面的存放位置坐标，在下一次从头开始放的过程中，我们需要上次的数据来判断总次数是不是需要加一。极端点说，如果你把整个数组归零，那么第二次做的时候做出和第一次一样的答案，cnt不是也会++嘛？</p>
+<p>第二个坑的话就是check里面循环的限制了</p>
+<p><code>for(int i=1;i&lt;y;i++)</code>这是修正之后的代码，代表检索他前面行有没有重复的，而我一开始愚蠢的写了n。。与后面的有什么相干？？</p>
+<p>到这里你以为完了嘛？这个代码并不能AC，最后一个测试点TLE了。。所以我不得不对其进行优化。</p>
+<p>然而怎么说，还有一个需要注意的地方，那就是</p>
+<p><code>for(int i=1;i&lt;=n;i++)cout&lt;&lt;l[i]&lt;&lt;&quot; &quot;;     cout&lt;&lt;endl;</code></p>
+<p>这样子，<strong>会在行末多输出一个空格，而这样很可能会WA掉</strong>，下次务必注意<strong>输出格式</strong></p>
+<p>然而还是T了</p>
+<p>这里尝试第一次改进：运用桶的思想，把出现过的行列对角线标记为True。</p>
+<p>主对角线：eg：(1,1),(2,2),(3,3)是差相等</p>
+<p>副对角线则是和相等，但要注意下标不能负数，所以可以整体加个n进行坐标偏移。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;, b[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;, c[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;, d[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;; <span class="comment">//分别代表行,列和副,主对角线</span></span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">0</span>, n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myprint</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[n] &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//注意不要多输出空格</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r == n + <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="keyword">if</span> (cnt &lt;= <span class="number">3</span>)</span><br><span class="line">            myprint();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="comment">//按列枚举可能位置</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> ((!b[i]) &amp;&amp; (!c[r + i]) &amp;&amp; (!d[r - i + n]))</span><br><span class="line">            &#123;</span><br><span class="line">                a[r] = i; <span class="comment">//第r行放第i个</span></span><br><span class="line">                b[i] = <span class="number">1</span>; <span class="comment">//标记纵列</span></span><br><span class="line">                c[r + i] = <span class="number">1</span>;</span><br><span class="line">                d[r - i + n] = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">//标记两条对角线(坐标+N偏移防止下标负数发生越界)</span></span><br><span class="line">                dfs(r + <span class="number">1</span>);</span><br><span class="line">                b[i] = <span class="number">0</span>;</span><br><span class="line">                c[r + i] = <span class="number">0</span>;</span><br><span class="line">                d[r - i + n] = <span class="number">0</span>;</span><br><span class="line">                <span class="comment">//（回到上一步）清除标记</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    dfs(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里有个小细节要说一下，回到上一步清除标记为什么要写在dfs(r+1)下面呢？首先我在return 上的理解有误差，一开始把flag归0写在了cnt++那边，但这显然是<strong>不正确的</strong>，其实在进入dfs(r+1)之后，他有两种情况返回dfs(r+1)的位置：层层推进，当走到最后一行，完成一种情况时，由我写的return 退回；或者是在推进过程中的某一次循环全部做完了，<strong>在dfs函数底部自带了一个return回到上一层递归</strong></p>
+<p>你以为这就完了？不可能的。</p>
+<p><a target="_blank" rel="noopener" href="http://www.matrix67.com/blog/archives/266">http://www.matrix67.com/blog/archives/266</a></p>
+<p>这题折磨了我很久很久很久。。。。</p>
+<p>先说一下优化的大致思路：首先我们需要标记行/列，左右对角线，为1就代表放过了。这里选择按列做flag，什么时候递归需要结束？所有的列均为1B即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt; //http://www.matrix67.com/blog/archives/266</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> sum, n, cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">15</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Queen</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> row, <span class="keyword">int</span> ld, <span class="keyword">int</span> rd)</span> <span class="comment">//分别为列，左右对角线哪里可放</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos, p;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> upperlim = (<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>; <span class="comment">//1左移n位，相当于2^n,本代码相当于n位全部置1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (row != upperlim) <span class="comment">//row没有全部放满，继续放</span></span><br><span class="line">    &#123;</span><br><span class="line">        pos = upperlim &amp; ~(row | ld | rd); <span class="comment">//~为取补,row,ld,rd中任意一个位置为1就不可以放</span></span><br><span class="line">        <span class="comment">//pos为1代表可以放</span></span><br><span class="line">        <span class="keyword">while</span> (pos != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            p = pos &amp; -pos; <span class="comment">//取出最右边的第一个1（后三位100即为4）,表示某个可以放子的位置</span></span><br><span class="line"></span><br><span class="line">            pos -= p; <span class="comment">//p放子，pos中p的位置清零</span></span><br><span class="line">            ans[(now - <span class="number">1</span>) % n + <span class="number">1</span>] = <span class="built_in">log</span>(p) / <span class="built_in">log</span>(<span class="number">2</span>)+<span class="number">1</span>;  <span class="comment">//now记录当前递归的层数，即行号（约瑟夫处理）</span></span><br><span class="line">            Queen(now + <span class="number">1</span>, row + p, (ld + p) &lt;&lt; <span class="number">1</span>, (rd + p) &gt;&gt; <span class="number">1</span>); <span class="comment">//下一行的时候对角线需要平移</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        sum++;</span><br><span class="line">        <span class="keyword">if</span> (sum &lt;= <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans[n] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    Queen(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; sum &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="这是一个DFS模板"><a href="#这是一个DFS模板" class="headerlink" title="这是一个DFS模板"></a>这是一个DFS模板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void dfs(答案,搜索层数,其他参数)&#123;</span><br><span class="line">    if(层数&#x3D;&#x3D;maxdeep)&#123;</span><br><span class="line">        更新答案;</span><br><span class="line">        return; </span><br><span class="line">    &#125;</span><br><span class="line">    (剪枝) </span><br><span class="line">    for(枚举下一层可能的状态)&#123;</span><br><span class="line">        更新全局变量表示状态的变量;</span><br><span class="line">        dfs(答案+新状态增加的价值,层数+1,其他参数);</span><br><span class="line">        还原全局变量表示状态的变量;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我第一次的代码跑了820ms，二进制优化的跑了240ms，而后面某大佬的只跑了28ms</p>
+<p>分奇数偶数：</p>
+<p>就是加入棋盘是4*4，那第一行是1100和0011是一样的</p>
+<p>如果是奇数，分完前一半后一半，还有正中间单独放的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson rt &lt;&lt; 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson rt &lt;&lt; 1 | 1</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ll)(ch - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">        ch = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> goal, sum, n, a[<span class="number">50</span>];</span><br><span class="line"><span class="keyword">int</span> cnt, type, num[<span class="number">1</span> &lt;&lt; <span class="number">14</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> zx, <span class="keyword">int</span> ys)</span> <span class="comment">//列，左下开始的对角线，右上的对角线</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (row == goal)</span><br><span class="line">    &#123;</span><br><span class="line">        sum++;</span><br><span class="line">        <span class="keyword">if</span> (sum &lt;= <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a[n]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> pos = goal &amp; (~(row | zx | ys));</span><br><span class="line">    <span class="keyword">if</span> (cnt == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type == <span class="number">1</span>)</span><br><span class="line">            pos = (<span class="number">1</span> &lt;&lt; (n &gt;&gt; <span class="number">1</span>)) - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            pos = <span class="number">1</span> &lt;&lt; (n &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt == <span class="number">1</span> &amp;&amp; type == <span class="number">2</span>)</span><br><span class="line">        pos = pos &amp; ((<span class="number">1</span> &lt;&lt; (n &gt;&gt; <span class="number">1</span>)) - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span> (pos)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> low = pos &amp; (-pos);</span><br><span class="line">        pos ^= low;  <span class="comment">//异或会比-更快</span></span><br><span class="line">        a[++cnt] = num[low];</span><br><span class="line">        dfs(row | low, (zx | low) &lt;&lt; <span class="number">1</span>, (ys | low) &gt;&gt; <span class="number">1</span>);<span class="comment">//或会比加更快</span></span><br><span class="line">        cnt--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    goal = (<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        num[<span class="number">1</span> &lt;&lt; i] = i + <span class="number">1</span>;</span><br><span class="line">    type = <span class="number">1</span>;</span><br><span class="line">    dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        type = <span class="number">2</span>;</span><br><span class="line">        dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">6</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;4 1 5 2 6 3\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, sum &lt;&lt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="USACO-Training-1-5-1-Number-Triangles"><a href="#USACO-Training-1-5-1-Number-Triangles" class="headerlink" title="USACO Training 1.5.1 Number Triangles"></a>USACO Training 1.5.1 Number Triangles</h1><p>Description</p>
+<p>观察下面的数字金字塔。</p>
+<p>写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        7 </span><br><span class="line">      3   8 </span><br><span class="line">    8   1   0 </span><br><span class="line">  2   7   4   4 </span><br><span class="line">4   5   2   6   5 </span><br></pre></td></tr></table></figure>
+
+<p>在上面的样例中,从7 到 3 到 8 到 7 到 5 的路径产生了最大和:30</p>
+<p>Input</p>
+<p>第一个行包含 R(1&lt;= R&lt;=1000) ,表示行的数目。</p>
+<p>后面每行为这个数字金字塔特定行包含的整数。</p>
+<p>所有的被供应的整数是非负的且不大于100。</p>
+<p>Output</p>
+<p>单独的一行包含那个可能得到的最大的和。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">7</span><br><span class="line">3 8</span><br><span class="line">8 1 0</span><br><span class="line">2 7 4 4</span><br><span class="line">4 5 2 6 5 </span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">30</span><br></pre></td></tr></table></figure>
+
+<p>这题是一题经典的dp入门题，我可以说是没有接触过dp，想了很久菜做出来，实在是菜的抠脚啊。。。</p>
+<p>首先一个灵魂拷问：这题能用<strong>贪心</strong>做吗？即从第一个位置往下走，找出下方两个中较大的相加，并一路走到底呢？？</p>
+<p>这是个很容易跳的坑，答案是<strong>不能！</strong>原因很简单，最大和不一定是每一个数都最大，举个例子，最左边一列为1，1，1，1，99999999，按贪心算法是做不到这一支的，自然不可能对。</p>
+<p>那么应该怎么做呢？</p>
+<p>分析：题目要求输出最大的和，而我们应该要求出每一行中和的最大数，一直累加到最后一行。而每个数都可以加到下一行的左右下方两数，那么反过来说，得到每一行的最大和可以从第二行做起，每个数都是由上两个对应数相加，在每一行中取 max，最后输出答案。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1002</span>][<span class="number">1002</span>]=&#123;<span class="number">0</span>&#125;,ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;a[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i][j];</span><br><span class="line">            a[i][j]+=max(a[i<span class="number">-1</span>][j],a[i<span class="number">-1</span>][j<span class="number">-1</span>]);</span><br><span class="line">            ans=max(ans,a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="USACO-Training-1-5-3-Superprime-Rib"><a href="#USACO-Training-1-5-3-Superprime-Rib" class="headerlink" title="USACO Training 1.5.3 Superprime Rib"></a>USACO Training 1.5.3 Superprime Rib</h1><p>Description</p>
+<p>农民约翰的母牛总是生产出最好的肋骨。你能通过农民约翰和美国农业部标记在每根肋骨上的数字认出它们。</p>
+<p>农民约翰确定他卖给买方的是真正的质数肋骨,是因为从右边开始切下肋骨,每次还剩下的肋骨上的数字都组成一个质数,举例来说:</p>
+<p>7 3 3 1</p>
+<p>全部肋骨上的数字 7331是质数;三根肋骨 733是质数;二根肋骨 73 是质数;当然,最后一根肋骨 7 也是质数。</p>
+<p>7331 被叫做长度 4 的特殊质数。</p>
+<p>写一个程序对给定的肋骨的数目 N (1&lt;=N&lt;=8),求出所有的特殊质数。数字1不被看作一个质数。</p>
+<p>Input</p>
+<p>单独的一行包含N。</p>
+<p>Output</p>
+<p>按顺序输出长度为 N 的特殊质数,每行一个。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 </span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">2333</span><br><span class="line">2339</span><br><span class="line">2393</span><br><span class="line">2399</span><br><span class="line">2939</span><br><span class="line">3119</span><br><span class="line">3137</span><br><span class="line">3733</span><br><span class="line">3739</span><br><span class="line">3793</span><br><span class="line">3797</span><br><span class="line">5939</span><br><span class="line">7193</span><br><span class="line">7331</span><br><span class="line">7333</span><br><span class="line">7393</span><br></pre></td></tr></table></figure>
+
+
+
+<p>绝了，我第一想法就是打表，<del>我没救了</del></p>
+<p>打表的时候遇到个问题：我把答案记录在vector套vector中，那么如何输出这些数呢？</p>
+<p><code>for(auto x:v[n]) cout&lt;&lt;x;</code></p>
+<p><code>for(int i = 0; i &lt;v[1].size(); I++) cout&lt;&lt;v[1][i];</code></p>
+<p>第一种方法对于需要迭代器的真的是很好使，爱了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; v(<span class="number">9</span>);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myprint</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> x:v[n])<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    v[<span class="number">1</span>]=&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line">    v[<span class="number">2</span>]=&#123;<span class="number">23</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">37</span>,<span class="number">53</span>,<span class="number">59</span>,<span class="number">71</span>,<span class="number">73</span>,<span class="number">79</span>&#125;;</span><br><span class="line">    v[<span class="number">3</span>]=&#123;<span class="number">233</span>,<span class="number">239</span>,<span class="number">293</span>,<span class="number">311</span>,<span class="number">313</span>,<span class="number">317</span>,<span class="number">373</span>,<span class="number">379</span>,<span class="number">593</span>,<span class="number">599</span>,<span class="number">719</span>,<span class="number">733</span>,<span class="number">739</span>,<span class="number">797</span>&#125;;</span><br><span class="line">    v[<span class="number">4</span>]=&#123;<span class="number">2333</span>,<span class="number">2339</span>,<span class="number">2393</span>,<span class="number">2399</span>,<span class="number">2939</span>,<span class="number">3119</span>,<span class="number">3137</span>,<span class="number">3733</span>,<span class="number">3739</span>,<span class="number">3793</span>,<span class="number">3797</span>,<span class="number">5939</span>,<span class="number">7193</span>,<span class="number">7331</span>,<span class="number">7333</span>,<span class="number">7393</span>&#125;;</span><br><span class="line">    v[<span class="number">5</span>]=&#123;<span class="number">23333</span>,<span class="number">23339</span>,<span class="number">23399</span>,<span class="number">23993</span>,<span class="number">29399</span>,<span class="number">31193</span>,<span class="number">31379</span>,<span class="number">37337</span>,<span class="number">37339</span>,<span class="number">37397</span>,<span class="number">59393</span>,<span class="number">59399</span>,<span class="number">71933</span>,<span class="number">73331</span>,<span class="number">73939</span>&#125;;</span><br><span class="line">    v[<span class="number">6</span>]=&#123;<span class="number">233993</span>,<span class="number">239933</span>,<span class="number">293999</span>,<span class="number">373379</span>,<span class="number">373393</span>,<span class="number">593933</span>,<span class="number">593993</span>,<span class="number">719333</span>,<span class="number">739391</span>,<span class="number">739393</span>,<span class="number">739397</span>,<span class="number">739399</span>&#125;;</span><br><span class="line">    v[<span class="number">7</span>]=&#123;<span class="number">2339933</span>,<span class="number">2399333</span>,<span class="number">2939999</span>,<span class="number">3733799</span>,<span class="number">5939333</span>,<span class="number">7393913</span>,<span class="number">7393931</span>,<span class="number">7393933</span>&#125;;</span><br><span class="line">    v[<span class="number">8</span>]=&#123;<span class="number">23399339</span>,<span class="number">29399999</span>,<span class="number">37337999</span>,<span class="number">59393339</span>,<span class="number">73939133</span>&#125;;</span><br><span class="line">    myprint(n);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>当然平时训练的时候最好还是不要打表了，这题还有什么做法呢？很容易就能想到<strong>深搜</strong>。为什么呢？一个数字，一位一位递进（和递退是等价的）dfs的代码一般都很简洁：思路为从第一位开始，往后填数字，但是由于后面的质数末尾肯定为奇数，所以只需循环计数的情况就可以了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>&#125;; <span class="comment">//枚举非首位的质数</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">prime</span><span class="params">(<span class="keyword">int</span> x)</span>              <span class="comment">//判断是否为质数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1不是质数</span></span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;                      <span class="comment">//如果是2直接返回1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="built_in">sqrt</span>(x); i++) <span class="comment">//此处是一个优化，只需要循环到x的算术平方根即可，否则会超时</span></span><br><span class="line">        <span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//如果有除了1和他本身以外的因数不是质数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;         <span class="comment">//是质数返回1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> sum)</span> <span class="comment">//sum代表当前位数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="keyword">if</span> (sum == n) <span class="comment">//位数够了就输出</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; k &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p = k * <span class="number">10</span> + a[i];   <span class="comment">//在最后加数字</span></span><br><span class="line">            <span class="keyword">if</span> (prime(p))        <span class="comment">//如果已经不是质数就没有搜下去的必要了</span></span><br><span class="line">                DFS(p, sum + <span class="number">1</span>); <span class="comment">//位数增加继续搜</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n; <span class="comment">//输入位数</span></span><br><span class="line">    DFS(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">    DFS(<span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line">    DFS(<span class="number">5</span>, <span class="number">1</span>);</span><br><span class="line">    DFS(<span class="number">7</span>, <span class="number">1</span>); <span class="comment">//首位数字只能为2，3，5，7</span></span><br><span class="line">    <span class="comment">//system(&quot;pause&quot;);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>搜索还得好好练那。</p>
+<p>但其实这题还有解法。</p>
+<p>这题适合用STL queue做，思路和上解相同，先生成母数，将母数放在队首，将拓展位数后合法的数push到队尾，结束后再pop队首的母树。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(<span class="keyword">int</span> x)</span>  <span class="comment">//判断质数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">sqrt</span>(x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= m; i += <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">int</span> n, m = <span class="number">4</span>, a[] = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>&#125;, b[] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">9</span>&#125;;  <span class="comment">//a为起始数字，b为拓展数，5会被5整除</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">        q.push(a[i]);      <span class="comment">//起始四数进入队列</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)   <span class="comment">//不做即一位，进入循环后i即数字的位数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l = m;</span><br><span class="line">        m = <span class="number">0</span>;         </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; l; j++)  <span class="comment">//所有符合条件的质数继续补一位</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++)</span><br><span class="line">                <span class="keyword">if</span> (isprime(q.front() * <span class="number">10</span> + b[k]))</span><br><span class="line">                    q.push(q.front() * <span class="number">10</span> + b[k]), m++;      <span class="comment">//m统计符合当前位数条件的质数个数</span></span><br><span class="line">            q.pop();   <span class="comment">//删除栈顶的原数（将原数生成的合法数push到队尾）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;q.front()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        q.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="USACO-Training-1-5-2-Prime-Palindromes"><a href="#USACO-Training-1-5-2-Prime-Palindromes" class="headerlink" title="USACO Training 1.5.2 Prime Palindromes"></a>USACO Training 1.5.2 Prime Palindromes</h1><p>Description</p>
+<p>因为151即是一个质数又是一个回文数(从左到右和从右到左是看一样的)，所以 151 号是回文质数。</p>
+<p>写一个程序来找出范围[a,b](<a target="_blank" rel="noopener" href="http://0.0.0.5/">http://5</a> &lt;%3D a &lt; b &lt;%3D 100%2C000%2C000/)间的所有回文质数;</p>
+<p>Input</p>
+<p>第 1 行: 二个整数 a 和 b .</p>
+<p>Output</p>
+<p>输出一个回文质数的列表，一行一个。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 500 </span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">7</span><br><span class="line">11</span><br><span class="line">101</span><br><span class="line">131</span><br><span class="line">151</span><br><span class="line">181</span><br><span class="line">191</span><br><span class="line">313</span><br><span class="line">353</span><br><span class="line">373</span><br><span class="line">383</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这题不多说了，思路很简单，就是自己把符合条件的数字构造出来</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">2</span>;k&lt;=<span class="built_in">sqrt</span>(n);++k)</span><br><span class="line">    <span class="keyword">if</span>(n%k==<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getsize</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m=<span class="number">1</span>,k=n;</span><br><span class="line">    <span class="keyword">while</span>(k&gt;<span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        k/=<span class="number">10</span>;</span><br><span class="line">        ++m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);</span></span><br><span class="line">    <span class="keyword">int</span> l,m,n,q,w,i,j,k;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</span><br><span class="line">    q=getsize(m);</span><br><span class="line">    w=getsize(n);</span><br><span class="line">    <span class="keyword">if</span>(q&lt;=<span class="number">1</span>&amp;&amp;w&gt;=<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((m&lt;=<span class="number">5</span>)&amp;&amp;(n&gt;=<span class="number">5</span>))</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="number">5</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span>((m&lt;=<span class="number">7</span>)&amp;&amp;(n&gt;=<span class="number">7</span>))</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="number">7</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((q&lt;=<span class="number">2</span>)&amp;&amp;(w&gt;=<span class="number">2</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((m&lt;=<span class="number">11</span>)&amp;&amp;(n&gt;=<span class="number">11</span>))</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="number">11</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((q&lt;=<span class="number">3</span>)&amp;&amp;(w&gt;=<span class="number">3</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">1</span>;a&lt;=<span class="number">9</span>;a+=<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>;b&lt;=<span class="number">9</span>;++b)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> f=a*<span class="number">100</span>+b*<span class="number">10</span>+a;</span><br><span class="line">            <span class="keyword">if</span>(f&lt;m)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(f&gt;n)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(is_prime(f))</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((q&lt;=<span class="number">5</span>)&amp;&amp;(w&gt;=<span class="number">5</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">1</span>;a&lt;=<span class="number">9</span>;a+=<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>;b&lt;=<span class="number">9</span>;++b)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> c=<span class="number">0</span>;c&lt;=<span class="number">9</span>;++c)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> f=a*<span class="number">10000</span>+b*<span class="number">1000</span>+c*<span class="number">100</span>+b*<span class="number">10</span>+a;</span><br><span class="line">            <span class="keyword">if</span>(f&lt;m)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(f&gt;n)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(is_prime(f))</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((q&lt;=<span class="number">7</span>)&amp;&amp;(w&gt;=<span class="number">7</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">1</span>;a&lt;=<span class="number">9</span>;a+=<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>;b&lt;=<span class="number">9</span>;++b)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> c=<span class="number">0</span>;c&lt;=<span class="number">9</span>;++c)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> d=<span class="number">0</span>;d&lt;=<span class="number">9</span>;++d)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> f=a*<span class="number">1000000</span>+b*<span class="number">100000</span>+c*<span class="number">10000</span>+d*<span class="number">1000</span>+c*<span class="number">100</span>+b*<span class="number">10</span>+a;</span><br><span class="line">            <span class="keyword">if</span>(f&lt;m)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(f&gt;n)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(is_prime(f))</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+  
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\posts\25911.html" title="题解01" rel="bookmark "><img src="https://img-blog.csdnimg.cn/img_convert/ab94f358cc379299731b9aaa4814fd47.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/ab94f358cc379299731b9aaa4814fd47.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解01</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/posts/42550.html>http://example.com/posts/42550.html</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
+  
+  
+  
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-23T12:04:11+08:00">
+  <a class='notlink'>
+    <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月23日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/posts/42550.html&title=题解05 - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/posts/42550.html&title=题解05 - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/posts/42550.html&title=题解05 - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+  <div class="prev-next">
+    
+    <a class='prev' href='/posts/29814.html'>
+      <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>USACO1.5</p>
+      <p class='content'>USACO Training 1.5.4 Checker ChallengeDescription
+检查一个如下的6 x 6的跳棋棋盘，有六个棋子被放置在棋盘上，使得每行、每列只有一个，每条对角...</p>
+    </a>
+    
+    
+    <a class='next' href='/posts/46263.html'>
+      <p class='title'>USACO1.4<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>USACO Training 1.4.1 Packing RectanglesDescription
+给定4个矩形块，找出一个最小的封闭矩形将这4个矩形块放入，但不得相互重叠。所谓最小矩形指该矩...</p>
+    </a>
+    
+  </div>
+  
+</article>
+
+
+
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fal fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+</div>
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    
+    
+      
+        <div class='copyright'>
+        <p>Copyright © 2020 <a href="/">GuZeng41</a></p>
+
+        </div>
+      
+    
+      
+        
+          <div><div><p>本站使用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://volantis.js.org/" data-pjax-state="">Volantis</a> 作为主题 | 由 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/zh-cn/" data-pjax-state="">Hexo</a> 强力驱动</p> </div></div>
+        
+      
+    
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+      loadScript('/js/issues.js');
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+    pjax_scrollrebeal();
+  });
+</script>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "CWkvH9J7sQW4z1w5Yqb0pW7R-gzGzoHsz",
+      appKey: "nkRCkVlHutFY1wFwTPdEuct1",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps,
+      master: '[de35cff18b57b04bbb9a61adbbc5889a]',
+      friends: '[fc2c9b067f65c9e2d7057ba797f7cfca]'
+    })
+  }
+
+  function newcomment() {
+
+function queryLeanCloud(k) {
+  let root = this;
+  let len = arguments.length;
+  if (len == 1) {
+    let notExist = new AV.Query("Comment");
+    notExist.doesNotExist('rid');
+    let isEmpty = new AV.Query("Comment");
+    isEmpty.equalTo('rid', '');
+    let q = AV.Query.or(notExist, isEmpty);
+    if (k === '*') q.exists('url');
+    else q.equalTo('url', decodeURI(k));
+    q.addDescending('createdAt');
+    q.addDescending('insertedAt');
+    return q;
+  } else {
+    let ids = JSON.stringify(arguments[1]).replace(/(\[|\])/g, '');
+    let cql = `select * from ${root['config']['clazzName']} where rid in (${ids}) order by -createdAt,-createdAt`;
+    return AV.Query.doCloudQuery(cql)
+  }
+}
+var valine = new Valine({
+      el: '#valine_container_ba',
+      notify: false,
+      verify: false,
+      app_id: 'CWkvH9J7sQW4z1w5Yqb0pW7R-gzGzoHsz',
+      app_key: 'nkRCkVlHutFY1wFwTPdEuct1',
+      placeholder: '发表您的意见，让我们一起交流，共同提高吧...',
+      serverURLs: 'https://toxicpl.heson.xyz'
+});
+
+//判断博主，heson改为自己的昵称
+function bozhu(e){
+    if (e == "heson"){
+        nick = e + '[博主]'
+        return nick;
+    } else {
+      return e
+    }
+}
+
+//判断网址
+function wangzhi(e){
+    http = e.slice(0,4)
+    https = e.slice(0,5)
+    if (http == "http" || https == "https" ){
+         return e
+    } else if (e == "" || e == null || e == undefined){
+      return e
+    } else {
+      e = 'http://'+ e
+      return e
+    }
+}
+
+
+
+
+//查询评论
+valine.Q('*').limit(7).find().then(function (comments) {
+  var hotComments = $("#hot-comments");
+  for (var i = 0; i < comments.length; i++) {
+    if (i === 0) {
+      console.log(comments[0]);
+    }
+    var nick = bozhu(comments[i]._serverData.nick);
+    var content = comments[i]._serverData.comment;
+    var newcontent = content.replace(/<[^>]+>/g,"").replace(/:.*?:/g,"[表情]").substring(0, 50);
+    var url = comments[i]._serverData.url;
+    var link = wangzhi(comments[i]._serverData.link);
+    var updatedAt = timeago(comments[i].updatedAt);
+    var commentId = '#' + comments[i].id;
+    hotComments.append('<div class="card-comment-item"><div class="item-header-text"><a href="'+ link +'" target="_blank" rel="nofollow noopener noreferrer" class="newcomment" >' + nick + '</a>&nbsp;发表于' + updatedAt + '</div><div class="item-text"><a href="' + url + commentId +'"  rel="nofollow" style="color:#717171" class="comments-detail" >' + newcontent + '</a></div></div>');
+  }
+});
+};
+
+
+
+  $(function () {
+    pjax_valine();
+    newcomment();
+  });
+</script>
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'C1qWqsDatomXVctTafBuJADI-gzGzoHsz',
+    app_key: 'J4CujIoElz1Wo7yLUbY4SOO5',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://example.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/bb/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+       
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+          newcomment();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
