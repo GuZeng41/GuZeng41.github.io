@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/1.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>dlx与精准覆盖 - Guzeng41的笔记</title>
+  
+    <meta name="keywords" content="dlx">
+  
+
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Guzeng41的笔记" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/heson525/fontawesome-pro@5.13.1/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" media="print" onload="this.media='all'">
+  
+
+
+  <!-- import link -->
+  
+
+  
+    
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.2.0/styles/a11y-dark.css">
+
+    
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <!-- 脚本懒加载函数 -->
+    <script>
+      function loadScript(src, cb) {
+        var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+        var script = document.createElement('script');
+        script.setAttribute('type','text/javascript');
+        if (cb) script.onload = cb;
+        script.setAttribute('src', src);
+        HEAD.appendChild(script);
+      }
+       </script>
+    
+</head>
+  <div id="clickCanvas" style=" position:fixed;left:0;top:0;z-index:999999999;pointer-events:none;"></div>
+<body>
+  <header class="l_header auto shadow floatable blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            GuZeng41笔记
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fal fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fal fa-search fa-fw'></i>找文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fal fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fal fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fal fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/guestbook/
+                  
+                  
+                  
+                    id="guestbook"
+                  >
+                  <i class='fal fa-comments fa-fw'></i>留言板
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/links/
+                  
+                  
+                  
+                    id="links"
+                  >
+                  <i class='fal fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/bb/
+                  
+                  
+                  
+                    id="bb"
+                  >
+                  <i class='fal fa-microphone-alt fa-fw'></i>说说
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fal fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fal fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fal fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fal fa-search fa-fw'></i>找文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fal fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fal fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fal fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/guestbook/
+                  
+                  
+                  
+                    id="guestbook"
+                  >
+                  <i class='fal fa-comments fa-fw'></i>留言板
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/links/
+                  
+                  
+                  
+                    id="links"
+                  >
+                  <i class='fal fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/bb/
+                  
+                  
+                  
+                    id="bb"
+                  >
+                  <i class='fal fa-microphone-alt fa-fw'></i>说说
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post featured' style="display: none;">
+        <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Guzeng41 的笔记</p>
+    
+    
+      <p class="subtitle">只想ac的小咸鱼</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fad fa-home fa-fw'></i><p>首页</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              id="categories">
+              <i class='fad fa-folder-open fa-fw'></i><p>分类</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fad fa-tags fa-fw'></i><p>标签</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fad fa-archive fa-fw'></i><p>归档</p>
+            </a>
+          
+            <a href="/bb/"
+              
+              
+              id="bb">
+              <i class='fad fa-microphone-alt fa-fw'></i><p>说说</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">dlx与精准覆盖</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "half") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "full") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<aside class='l_side'>
+  <div style="margin-bottom: 16px;border-radius: 8px;" class='shadow floatable widget_author desktop'>
+    <div id="zuozhebg" class="newauthor"
+      style="background: url(https://v1.alapi.cn/api/avatar?email=936018980&size=100) center center no-repeat;background-size:cover">
+    </div>
+    <div class="relive_widget_v3">
+      <div class="box-author-info">
+        <div class="author-face">
+          <a href="/about" target="_blank" rel="nofollow" title="关于GuZeng41">
+            <img no-lazy alt="" src="https://v1.alapi.cn/api/avatar?email=936018980&size=100"
+              class="avatar avatar-200 photo" height="200" width="200"> </a>
+        </div>
+        <div class="author-name">GuZeng41</div>
+        <div id="author-one" class="author-one">
+         一个笔记网站
+
+
+        </div>
+        <div class="site-state-wrap motion-element">
+          <nav class="site-state">
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  
+  
+    
+    
+  
+
+  <section class="widget category shadow floatable desktop">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fal fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/USACO/" href="/categories/USACO/"
+            id="categoriesUSACO"
+            ><div class='name'>USACO</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%AF%8F%E5%91%A8%E9%A2%98%E8%A7%A3/" href="/categories/%E6%AF%8F%E5%91%A8%E9%A2%98%E8%A7%A3/"
+            id="categoriesE6AF8FE591A8E9A298E8A7A3"
+            ><div class='name'>每周题解</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+
+  
+    
+    
+
+<section class="widget text shadow floatable desktop">
+  
+  <header>
+    
+      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <div id="hot-comments"></div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>13 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2020/11/09'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>61.7k 字</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          
+            <div id="last-update" style="display: none;">Sun Nov 29 2020 15:26:03 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2020-11-29 日</div>
+          
+        </div>
+        
+        <script>
+          function timeago(dateTimeStamp) {
+              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
+              var hour = minute * 60;
+              var day = hour * 24;
+              var week = day * 7;
+              var month = day * 30;
+              var now = new Date().getTime(); //获取当前时间毫秒
+              var diffValue = now - dateTimeStamp; //时间差
+              if (diffValue < 0) {
+                  return;
+              }
+              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
+              var hourC = diffValue / hour;
+              var dayC = diffValue / day;
+              var weekC = diffValue / week;
+              var monthC = diffValue / month;
+              if (monthC >= 1 && monthC <= 3) {
+                  result = " " + parseInt(monthC) + " 月前"
+              } else if (weekC >= 1 && weekC <= 3) {
+                  result = " " + parseInt(weekC) + " 周前"
+              } else if (dayC >= 1 && dayC <= 6) {
+                  result = " " + parseInt(dayC) + " 天前"
+              } else if (hourC >= 1 && hourC <= 23) {
+                  result = " " + parseInt(hourC) + " 小时前"
+              } else if (minC >= 1 && minC <= 59) {
+                  result = " " + parseInt(minC) + " 分钟前"
+              } else if (diffValue >= 0 && diffValue <= minute) {
+                  result = "刚刚"
+              } else {
+                  var datetime = new Date();
+                  datetime.setTime(dateTimeStamp);
+                  var Nyear = datetime.getFullYear();
+                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+                  result = Nyear + "-" + Nmonth + "-" + Ndate
+              }
+              return result;
+          }
+          var lastUpDate = document.getElementById('last-update').innerHTML;
+          try {
+            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
+          } catch (error) {
+            document.getElementById('last-update-show').innerHTML = '2020-11-29 日';
+          }
+        </script>
+        
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-text">1 写在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DLX%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98%E5%BC%95%E5%85%A5"><span class="toc-text">2 DLX标准模板问题引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%AB%E7%9A%87%E5%90%8E%E4%B8%8EDLX"><span class="toc-text">3 八皇后与DLX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%95%B0%E7%8B%AC%E4%B8%8EDLX"><span class="toc-text">4 数独与DLX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E4%BA%8C-%E9%9D%B6%E5%BD%A2%E6%95%B0%E7%8B%AC"><span class="toc-text">例题二 靶形数独</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<div class='l_main'>
+  <article
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        dlx与精准覆盖
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://v1.alapi.cn/api/avatar?email=936018980&size=100">
+    <p>GuZeng41</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月29日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="dlx与精准覆盖" data-path="/posts/52060.html">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+
+  
+  <h1 id="DLX（dancing-links-x）舞蹈链与精准覆盖"><a href="#DLX（dancing-links-x）舞蹈链与精准覆盖" class="headerlink" title="DLX（dancing links x）舞蹈链与精准覆盖"></a><strong>DLX（dancing links x）舞蹈链与精准覆盖</strong></h1><h2 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1 写在前面"></a>1 写在前面</h2><p>写这篇文章的动机就是在学dfs的过程中遇到了一些精准覆盖类的问题。用基本的dfs加剪枝要么T要么在T的边缘摩擦。这里在某老板的指导下学习了dlx算法。因为我算是<strong>第一次</strong>接触<strong>复杂</strong>（对我来说！！！）的模板，所以理解力和代码灵活度方面极度欠缺。这里记录一下我学习dlx的过程。（后续可能还会有更新）如有问题，欢迎在评论区指正（主要是我自己看）</p>
+<p>这里首先要感谢几位大佬的博客</p>
+<p>万仓一黍：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/grenet/p/3145800.html">https://www.cnblogs.com/grenet/p/3145800.html</a></p>
+<p>Hypoc： <a target="_blank" rel="noopener" href="https://blog.csdn.net/a_forever_dream/article/details/95939586?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control">https://blog.csdn.net/a_forever_dream/article/details/95939586?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control</a></p>
+<p>以及万能的wiki：<a target="_blank" rel="noopener" href="https://oi-wiki.org/search/dlx/">https://oi-wiki.org/search/dlx/</a></p>
+<h2 id="2-DLX标准模板问题引入"><a href="#2-DLX标准模板问题引入" class="headerlink" title="2 DLX标准模板问题引入"></a>2 DLX标准模板问题引入</h2><p><strong>精确覆盖问题的定义</strong>：给定一个由0-1组成的矩阵，是否能找到一个行的集合，使得集合中每一列都恰好包含一个1</p>
+<p>例如：如下的矩阵</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/20141205-78f0147dae6940b8a2c72d8928fcc806.png"><img src="https://images0.cnblogs.com/blog/93227/201306/20141206-4ffe865b38304f679d2ff7c4436ab4b7.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/20141206-4ffe865b38304f679d2ff7c4436ab4b7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="clip_image002"></a></p>
+<p>就包含了这样一个集合（第1、4、5行）</p>
+<p>如何利用给定的矩阵求出相应的行的集合呢？我们采用回溯法</p>
+<p>矩阵1：<a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/21074621-b280963e9390402fb0ade0ab7e1695c7.png"><img src="https://images0.cnblogs.com/blog/93227/201306/20141206-4ffe865b38304f679d2ff7c4436ab4b7.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/20141206-4ffe865b38304f679d2ff7c4436ab4b7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="clip_image002"></a></p>
+<p>先假定选择第1行，如下所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152344.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152344.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>如上图中所示，红色的那行是选中的一行，这一行中有3个1，分别是第3、5、6列。</p>
+<p>由于这3列已经包含了1，故，把这三列往下标示，图中的蓝色部分。蓝色部分包含3个1，分别在2行中，把这2行用紫色标示出来</p>
+<p>根据定义，同一列的1只能有1个，故紫色的两行，和红色的一行的1相冲突。</p>
+<p>那么在接下来的求解中，红色的部分、蓝色的部分、紫色的部分都不能用了，把这些部分都删除，得到一个新的矩阵</p>
+<p>矩阵2：<img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152405.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152405.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>行分别对应矩阵1中的第2、4、5行</p>
+<p>列分别对应矩阵1中的第1、2、4、7列</p>
+<p>于是问题就转换为一个规模小点的精确覆盖问题</p>
+<p>在新的矩阵中再选择第1行，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152439.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152439.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>还是按照之前的步骤，进行标示。红色、蓝色和紫色的部分又全都删除，导致新的空矩阵产生，而红色的一行中有0（有0就说明这一列没有1覆盖）。说明，第1行选择是错误的</p>
+<p>那么回到之前，选择第2行，如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152458.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152458.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>按照之前的步骤，进行标示。把红色、蓝色、紫色部分删除后，得到新的矩阵</p>
+<p>矩阵3：<img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152522.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129152522.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>行对应矩阵2中的第3行，矩阵1中的第5行</p>
+<p>列对应矩阵2中的第2、4列，矩阵1中的第2、7列</p>
+<p>由于剩下的矩阵只有1行，且都是1，选择这一行，问题就解决</p>
+<p>于是该问题的解就是矩阵1中第1行、矩阵2中的第2行、矩阵3中的第1行。也就是矩阵1中的第1、4、5行</p>
+<p>在求解这个问题的过程中，我们第1步选择第1行是正确的，但是不是每个题目第1步选择都是正确的，如果选择第1行无法求解出结果出来，那么就要推倒之前的选择，从选择第2行开始，以此类推</p>
+<p>从上面的求解过程来看，实际上求解过程可以如下表示</p>
+<p>1、从矩阵中选择一行</p>
+<p>2、根据定义，标示矩阵中其他行的元素</p>
+<p>3、删除相关行和列的元素，得到新矩阵</p>
+<p>4、如果新矩阵是空矩阵，并且之前的一行都是1，那么求解结束，跳转到6；新矩阵不是空矩阵，继续求解，跳转到1；新矩阵是空矩阵，之前的一行中有0，跳转到5</p>
+<p>5、说明之前的选择有误，回溯到之前的一个矩阵，跳转到1；如果没有矩阵可以回溯，说明该问题无解，跳转到7</p>
+<p>6、求解结束，把结果输出</p>
+<p>7、求解结束，输出无解消息</p>
+<p>从如上的求解流程来看，在求解的过程中有大量的缓存矩阵和回溯矩阵的过程。而如何缓存矩阵以及相关的数据（保证后面的回溯能正确恢复数据），也是一个比较头疼的问题（并不是无法解决）。以及在输出结果的时候，如何输出正确的结果（把每一步的选择转换为初始矩阵相应的行）。</p>
+<p>于是算法大师Donald E.Knuth（《计算机程序设计艺术》的作者）出面解决了这个方面的难题。他提出了DLX（Dancing Links X）算法。实际上，他把上面求解的过程称为X算法，而他提出的舞蹈链（Dancing Links）实际上并不是一种算法，而是一种数据结构。一种非常巧妙的数据结构，他的数据结构在缓存和回溯的过程中效率惊人，不需要额外的空间，以及近乎线性的时间。而在整个求解过程中，指针在数据之间跳跃着，就像精巧设计的舞蹈一样，故Donald E.Knuth把它称为Dancing Links（中文译名舞蹈链）。</p>
+<p>Dancing Links的核心是基于双向链的方便操作（移除、恢复加入）</p>
+<p>我们用例子来说明</p>
+<p>假设双向链的三个连续的元素，A1、A2、A3，每个元素有两个分量Left和Right，分别指向左边和右边的元素。由定义可知</p>
+<p>A1.Right=A2，A2.Right=A3</p>
+<p>A2.Left=A1，A3.Left=A2</p>
+<p>在这个双向链中，可以由任一个元素得到其他两个元素，A1.Right.Right=A3，A3.Left.Left=A1等等</p>
+<p>现在把A2这个元素从双向链中移除（不是删除）出去，那么执行下面的操作就可以了</p>
+<p>A1.Right=A3，A3.Left=A1</p>
+<p>那么就直接连接起A1和A3。A2从双向链中移除出去了。但仅仅是从双向链中移除了，A2这个实体还在，并没有删除。只是在双向链中遍历的话，遍历不到A2了。</p>
+<p>那么A2这个实体中的两个分量Left和Right指向谁？由于实体还在，而且没有修改A2分量的操作，那么A2的两个分量指向没有发生变化，也就是在移除前的指向。即A2.Left=A1和A2.Right=A3</p>
+<p>如果此时发现，需要把A2这个元素重新加入到双向链中的原来的位置，也就是A1和A3的中间。由于A2的两个分量没有发生变化，仍然指向A1和A3。那么只要修改A1的Right分量和A3的Left就行了。也就是下面的操作</p>
+<p>A1.Right=A2，A3.Left=A2</p>
+<p>仔细想想，上面两个操作（移除和恢复加入）对应了什么？是不是对应了之前的算法过程中的关键的两步？</p>
+<p>移除操作对应着缓存数据、恢复加入操作对应着回溯数据。而美妙的是，这两个操作不再占用新的空间，时间上也是极快速的</p>
+<p>在很多实际运用中，把双向链的首尾相连，构成循环双向链</p>
+<p>Dancing Links用的数据结构是<strong>交叉十字循环双向链</strong></p>
+<p>而Dancing Links中的每个元素不仅是横向循环双向链中的一份子，又是纵向循环双向链的一份子。</p>
+<p>因为精确覆盖问题的矩阵往往是稀疏矩阵（矩阵中，0的个数多于1），Dancing Links仅仅记录矩阵中值是1的元素。</p>
+<p>Dancing Links中的每个元素有6个分量</p>
+<p>分别：Left指向左边的元素、Right指向右边的元素、Up指向上边的元素、Down指向下边的元素、Col指向列标元素、Row指示当前元素所在的行</p>
+<p>Dancing Links还要准备一些辅助元素（为什么需要这些辅助元素？没有太多的道理，大师认为这能解决问题，实际上是解决了问题）</p>
+<p>Ans（）：Ans数组，在求解的过程中保留当前的答案，以供最后输出答案用。</p>
+<p>Head元素：求解的辅助元素，在求解的过程中，当判断出Head.Right=Head（也可以是Head.Left=Head）时，求解结束，输出答案。Head元素只有两个分量有用。其余的分量对求解没啥用</p>
+<p>C元素：辅助元素，称列标元素，每列有一个列标元素。本文开始的题目的列标元素分别是C1、C2、C3、C4、C5、C6、C7。每一列的元素的Col分量都指向所在列的列标元素。列标元素的Col分量指向自己（也可以是没有）。在初始化的状态下，Head.Right=C1、C1.Right=C2、……、C7.Right=Head、Head.Left=C7等等。列标元素的分量Row=0，表示是处在第0行。</p>
+<p>下图就是根据题目构建好的<strong>交叉十字循环双向链</strong>（构建的过程后面的详述）</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29144604-86559ddc694840869aebb129c2874afb.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29144607-5d8ddd307f8043b98438f4cfefafb7a9.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29144607-5d8ddd307f8043b98438f4cfefafb7a9.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>就上图解释一下</p>
+<p>每个绿色方块是一个元素，其中Head和C1、C2、……、C7是辅助元素。橙色框中的元素是原矩阵中1的元素，给他们标上号（从1到16）</p>
+<p>左侧的红色，标示的是行号，辅助元素所在的行是0行，其余元素所在的行从1到6</p>
+<p>每两个元素之间有一个双向箭头连线，表示双向链中相邻两个元素的关系（水平的是左右关系、垂直的是上下关系）</p>
+<p>单向的箭头并不是表示单向关系，而因为是循环双向链，左侧的单向箭头和右侧的单向箭头（上边的和下边的）组成了一个双向箭头，例如元素14左侧的单向箭头和元素16右侧的单项箭头组成一个双向箭头，表示14.Left=16、16.Right=14；同理，元素14下边的单项箭头和元素C4上边的单向箭头组成一个双向箭头，表示14.Down=C4、C4.Up=14</p>
+<p>接下来，利用图来解释Dancing Links是如何求解精确覆盖问题</p>
+<p>1、首先判断Head.Right=Head？若是，求解结束，输出解；若不是，求解还没结束，到步骤2（也可以判断Head.Left=Head？）</p>
+<p>2、获取Head.Right元素，即元素C1，并<strong>标示元素C1</strong>（<strong>标示元素C1</strong>，指的是标示C1、和C1所在列的所有元素、以及该元素所在行的元素，并从双向链中移除这些元素）。如下图中的紫色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29191205-b1a6267f14f448918334eceda468139e.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29191213-ea9487ba623a4256af39b0f783551d46.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29191213-ea9487ba623a4256af39b0f783551d46.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>如上图可知，行2和行4中的一个必是答案的一部分（其他行中没有元素能覆盖列C1），先假设选择的是行2</p>
+<p>3、选择行2（在答案栈中压入2），标示该行中的其他元素（元素5和元素6）所在的列首元素，即<strong>标示元素C4</strong>和<strong>标示元素C7</strong>，下图中的橙色部分。</p>
+<p>注意的是，即使元素5在步骤2中就从双向链中移除，但是元素5的Col分量还是指向元素C4的，这里体现了双向链的强大作用。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29191217-3d619d4ed8014755be9be60067822d5b.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29191223-8705421ba852459991f5e0fc55e583fb.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29191223-8705421ba852459991f5e0fc55e583fb.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>把上图中的紫色部分和橙色部分移除的话，剩下的绿色部分就如下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29200540-37cc75d6ef9b408d8718ff401e85d32b.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29200548-58c6dfe4a6dc42778052c075937f2e91.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29200548-58c6dfe4a6dc42778052c075937f2e91.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>一下子空了好多，是不是转换为一个少了很多元素的精确覆盖问题？，利用递归的思想，很快就能写出求解的过程来。我们继续完成求解过程</p>
+<p>4、获取Head.Right元素，即元素C2，并<strong>标示元素C2</strong>。如下图中的紫色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29203052-0745493325a444a08462a942cb3e75d0.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29203106-b4e21f8f73c443948ee8d0a7c3f5e3d3.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29203106-b4e21f8f73c443948ee8d0a7c3f5e3d3.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>如图，列C2只有元素7覆盖，故答案只能选择行3</p>
+<p>5、选择行3（在答案栈中压入3），标示该行中的其他元素（元素8和元素9）所在的列首元素，即<strong>标示元素C3</strong>和<strong>标示元素C6</strong>，下图中的橙色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29203128-9cc10a73ea3d4fa4a8afa47c54ee913f.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29203130-a0956c32c6c74c35b5d9d35708dcb26c.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29203130-a0956c32c6c74c35b5d9d35708dcb26c.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>把上图中的紫色部分和橙色部分移除的话，剩下的绿色部分就如下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29203132-a0192b4014e64ee2b0b0b87229759e07.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29203133-84cad7532a904218b8dc9c48551493be.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29203133-84cad7532a904218b8dc9c48551493be.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>6、获取Head.Right元素，即元素C5，元素C5中的垂直双向链中没有其他元素，也就是没有元素覆盖列C5。说明当前求解失败。要回溯到之前的分叉选择步骤（步骤2）。那要<strong>回标列首元素</strong>（把列首元素、所在列的元素，以及对应行其余的元素。并恢复这些元素到双向链中），<strong>回标列首元素</strong>的顺序是<strong>标示元素</strong>的顺序的反过来。从前文可知，顺序是<strong>回标列首C6</strong>、<strong>回标列首C3</strong>、<strong>回标列首C2</strong>、<strong>回标列首C7</strong>、<strong>回标列首C4</strong>。表面上看起来比较复杂，实际上利用递归，是一件很简单的事。并把答案栈恢复到步骤2（清空的状态）的时候。又回到下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29203137-cf812112bef841778df91d379b13e146.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29203218-8f43b6b0fda345c2b2edefb18e00bc74.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29203218-8f43b6b0fda345c2b2edefb18e00bc74.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>7、由于之前选择行2导致无解，因此这次选择行4（再无解就整个问题就无解了）。选择行4（在答案栈中压入4），标示该行中的其他元素（元素11）所在的列首元素，即<strong>标示元素C4</strong>，下图中的橙色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212012-b97eb83c9ef8439c8b5e8c5eabca7f5d.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212018-a7df640c72c94f6086fe92be015509f3.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212018-a7df640c72c94f6086fe92be015509f3.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>把上图中的紫色部分和橙色部分移除的话，剩下的绿色部分就如下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212023-d0b76a241a264dd786b199e8be187590.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212027-4a8d90294bae4167b5d4138da1877dc7.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212027-4a8d90294bae4167b5d4138da1877dc7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>8、获取Head.Right元素，即元素C2，并<strong>标示元素C2</strong>。如下图中的紫色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212103-75ab63fd4a2d4c2a932792bdbdd91c8c.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212130-3f50443c6b2e4597a108273ece4da7a0.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212130-3f50443c6b2e4597a108273ece4da7a0.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>如图，行3和行5都可以选择</p>
+<p>9、选择行3（在答案栈中压入3），标示该行中的其他元素（元素8和元素9）所在的列首元素，即<strong>标示元素C3</strong>和<strong>标示元素C6</strong>，下图中的橙色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212134-61e58889829e46c787da68afa8e82a4a.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212144-3ea5fc774d6e482ab1430352e2ce833f.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212144-3ea5fc774d6e482ab1430352e2ce833f.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>把上图中的紫色部分和橙色部分移除的话，剩下的绿色部分就如下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212147-a2c4fdccec5e4661a50fd85f76cebd28.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212149-1e77730a93e14d85a0754a60a1718e7a.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212149-1e77730a93e14d85a0754a60a1718e7a.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>10、获取Head.Right元素，即元素C5，元素C5中的垂直双向链中没有其他元素，也就是没有元素覆盖列C5。说明当前求解失败。要回溯到之前的分叉选择步骤（步骤8）。从前文可知，<strong>回标列首C6</strong>、<strong>回标列首C3</strong>。并把答案栈恢复到步骤8（答案栈中只有4）的时候。又回到下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212201-74ab795ee3d849cc96dbb7bca00f411b.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212203-2837645139194e10aca506d068598042.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212203-2837645139194e10aca506d068598042.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>11、由于之前选择行3导致无解，因此这次选择行5（在答案栈中压入5），标示该行中的其他元素（元素13）所在的列首元素，即<strong>标示元素C7</strong>，下图中的橙色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212205-68209a3f717641cabd381f4b73289ea2.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212208-fc87b4cb9c8c41dabd3f8f9449d88660.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212208-fc87b4cb9c8c41dabd3f8f9449d88660.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>把上图中的紫色部分和橙色部分移除的话，剩下的绿色部分就如下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212211-b38d3dcaef0c41d6b5b2d10dc828cff1.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212212-571acb54f23e4689a28961b1e42ae057.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212212-571acb54f23e4689a28961b1e42ae057.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>12、获取Head.Right元素，即元素C3，并<strong>标示元素C3</strong>。如下图中的紫色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212224-620eb69ee3e1482a8152d6c6f45b68b2.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212229-50d9f74cdd2e4d1bbb1d7211b8d6b332.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212229-50d9f74cdd2e4d1bbb1d7211b8d6b332.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>13、如上图，列C3只有元素1覆盖，故答案只能选择行3（在答案栈压入1）。标示该行中的其他元素（元素2和元素3）所在的列首元素，即<strong>标示元素C5</strong>和<strong>标示元素C6</strong>，下图中的橙色部分。</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212230-934c4955724c4204ba282f2be8b7d8af.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212232-c3f7a1c108274c7d97b2d755e55195aa.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212232-c3f7a1c108274c7d97b2d755e55195aa.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>把上图中的紫色部分和橙色部分移除的话，剩下的绿色部分就如下图所示</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212233-a34cd0336b084dd580c391cc1d491a42.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212234-671c212ac39c4ad8ac2b6333cd9c7ff2.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212234-671c212ac39c4ad8ac2b6333cd9c7ff2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>14、因为Head.Right=Head。故，整个过程求解结束。输出答案，答案栈中的答案分别是4、5、1。表示该问题的解是第4、5、1行覆盖所有的列。如下图所示（蓝色的部分）</p>
+<p><a target="_blank" rel="noopener" href="https://images0.cnblogs.com/blog/93227/201306/29212236-13c19a7117144a94bffccaca5050d458.png"><img src="https://images0.cnblogs.com/blog/93227/201306/29212242-e557c0c8cb364890a5003ca7d934c01a.png" class="lazyload" data-srcset="https://images0.cnblogs.com/blog/93227/201306/29212242-e557c0c8cb364890a5003ca7d934c01a.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image"></a></p>
+<p>从以上的14步来看，可以把Dancing Links的求解过程表述如下</p>
+<p>1、Dancing函数的入口</p>
+<p>2、判断Head.Right=Head？，若是，输出答案，返回True，退出函数。</p>
+<p>3、获得Head.Right的元素C</p>
+<p>4、<strong>标示元素C</strong></p>
+<p>5、获得元素C所在列的一个元素</p>
+<p>6、<strong>标示该元素同行的其余元素所在的列首元素</strong></p>
+<p>7、获得一个简化的问题，递归调用Daning函数，若返回的True，则返回True，退出函数。</p>
+<p>8、若返回的是False，则<strong>回标该元素同行的其余元素所在的列首元素</strong>，回标的顺序和之前标示的顺序相反</p>
+<p>9、获得元素C所在列的下一个元素，若有，跳转到步骤6</p>
+<p>10、若没有，<strong>回标元素C</strong>，返回False，退出函数。</p>
+<p>之前的文章的表述，为了表述简单，采用面向对象的思路，说每个元素有6个分量，分别是Left、Right、Up、Down、Col、Row分量。</p>
+<p>但在实际的编码中，用数组也能实现相同的作用。例如：用Left（）表示所有元素的Left分量，Left（1）表示元素1的Left分量</p>
+<p>在前文中，元素分为Head元素、列首元素（C1、C2等）、普通元素。在编码中，三种元素统一成一种元素。如上题，0表示Head元素，1表示元素C1、2表示元素C2、……、7表示元素C7，从8开始表示普通元素。这是统一后，编码的简便性。利用数组的下标来表示元素，宛若指针一般。</p>
+<p>那么在C++中DLX的代码是怎样的呢？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rgi register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rgl register ll</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> il inline</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">500</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, idx, ans;</span><br><span class="line"><span class="keyword">int</span> first[N], siz[N], stk[N];<span class="comment">//stk记录答案</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DLXNODE</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> lc, rc, up, dn, r, c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">il <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  rgi x = <span class="number">0</span>, f = <span class="number">0</span>, ch;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch = getchar())) f |= ch == <span class="string">&#x27;-&#x27;</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>), ch = getchar();</span><br><span class="line">  <span class="keyword">return</span> f ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DLX</span> &#123;</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> MAXSIZE = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IT(i, A, x) for (i = A[x]; i != x; i = A[i])</span></span><br><span class="line">  <span class="keyword">int</span> n, m, tot, first[MAXSIZE + <span class="number">10</span>], siz[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="keyword">int</span> L[MAXSIZE + <span class="number">10</span>], R[MAXSIZE + <span class="number">10</span>], U[MAXSIZE + <span class="number">10</span>], D[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="keyword">int</span> col[MAXSIZE + <span class="number">10</span>], row[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    n = r, m = c;</span><br><span class="line">    <span class="keyword">for</span> (rgi i = <span class="number">0</span>; i &lt;= c; ++i) &#123;</span><br><span class="line">      L[i] = i - <span class="number">1</span>, R[i] = i + <span class="number">1</span>;</span><br><span class="line">      U[i] = D[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    L[<span class="number">0</span>] = c, R[c] = <span class="number">0</span>, tot = c;</span><br><span class="line">    <span class="built_in">memset</span>(first, <span class="number">0</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">    <span class="built_in">memset</span>(siz, <span class="number">0</span>, <span class="keyword">sizeof</span>(siz));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    col[++tot] = c, row[tot] = r, ++siz[c];</span><br><span class="line">    D[tot] = D[c], U[D[c]] = tot, U[tot] = c, D[c] = tot;</span><br><span class="line">    <span class="keyword">if</span> (!first[r])</span><br><span class="line">      first[r] = L[tot] = R[tot] = tot;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      R[tot] = R[first[r]], L[R[first[r]]] = tot;</span><br><span class="line">      L[tot] = first[r], R[first[r]] = tot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    rgi i, j;</span><br><span class="line">    L[R[c]] = L[c], R[L[c]] = R[c];</span><br><span class="line">    IT(i, D, c) IT(j, R, i) U[D[j]] = U[j], D[U[j]] = D[j], --siz[col[j]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">recover</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    rgi i, j;</span><br><span class="line">    IT(i, U, c) IT(j, L, i) U[D[j]] = D[U[j]] = j, ++siz[col[j]];</span><br><span class="line">    L[R[c]] = R[L[c]] = c;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">dance</span><span class="params">(<span class="keyword">int</span> dep)</span> </span>&#123;  <span class="comment">//dance即为递归地删除以及还原各个行列的过程</span></span><br><span class="line">    <span class="keyword">if</span> (!R[<span class="number">0</span>]) &#123;</span><br><span class="line">      ans = dep;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    rgi i, j, c = R[<span class="number">0</span>];</span><br><span class="line">    IT(i, R, <span class="number">0</span>) <span class="keyword">if</span> (siz[i] &lt; siz[c]) c = i;</span><br><span class="line">    remove(c);</span><br><span class="line">    IT(i, D, c) &#123;</span><br><span class="line">      stk[dep] = row[i];</span><br><span class="line">      IT(j, R, i) remove(col[j]);</span><br><span class="line">      <span class="keyword">if</span> (dance(dep + <span class="number">1</span>)) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">      IT(j, L, i) recover(col[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    recover(c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> IT</span></span><br><span class="line">&#125; solver;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  n = read(), m = read();</span><br><span class="line">  solver.build(n, m);</span><br><span class="line">  <span class="keyword">for</span> (rgi i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    <span class="keyword">for</span> (rgi j = <span class="number">1</span>; j &lt;= m; ++j) &#123;</span><br><span class="line">      <span class="keyword">int</span> x = read();</span><br><span class="line">      <span class="keyword">if</span> (x) solver.insert(i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  solver.dance(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span> (ans)</span><br><span class="line">    <span class="keyword">for</span> (rgi i = <span class="number">1</span>; i &lt; ans; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, stk[i]);</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;No Solution!&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-八皇后与DLX"><a href="#3-八皇后与DLX" class="headerlink" title="3 八皇后与DLX"></a>3 八皇后与DLX</h2><p>八皇后问题过于经典，它属于典型的精准覆盖问题</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100100</span>;</span><br><span class="line"><span class="keyword">int</span> ans,nn,o;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">out</span>&#123;</span><span class="keyword">int</span> a[<span class="number">14</span>];&#125;Ans[N];</span><br><span class="line"><span class="keyword">namespace</span> DLX</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,cnt;<span class="comment">//长宽，点的数量</span></span><br><span class="line">    <span class="keyword">int</span> l[N],r[N],u[N],d[N];<span class="comment">//上下左右的情况</span></span><br><span class="line">    <span class="keyword">int</span> row[N],col[N];<span class="comment">//每个点所处的行列</span></span><br><span class="line">    <span class="keyword">int</span> h[N],s[N];<span class="comment">//头节点和每列节点数</span></span><br><span class="line">    <span class="keyword">int</span> ansk[<span class="number">20</span>];<span class="comment">//答案</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> nn,<span class="keyword">int</span> mm)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//这个表格被循环套了起来，就像贪吃蛇的地图，左右和上下相通</span></span><br><span class="line">        <span class="comment">//预先给第0行的每一列弄一个点</span></span><br><span class="line">        n=nn,m=mm;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;i++)</span><br><span class="line">            r[i]=i+<span class="number">1</span>,l[i]=i<span class="number">-1</span>,u[i]=d[i]=i;</span><br><span class="line">        r[m]=<span class="number">0</span>;l[<span class="number">0</span>]=cnt=m;</span><br><span class="line">        <span class="built_in">memset</span>(h,<span class="number">-1</span>,<span class="keyword">sizeof</span>(h));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> R,<span class="keyword">int</span> C)</span><span class="comment">//在R行C列插入点</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        s[C]++;cnt++;<span class="comment">//先记录这个点的各种信息</span></span><br><span class="line">        row[cnt]=R; col[cnt]=C;</span><br><span class="line">        <span class="comment">//把列的链表改动</span></span><br><span class="line">        u[cnt]=C;</span><br><span class="line">        d[cnt]=d[C];</span><br><span class="line">        u[d[C]]=cnt;</span><br><span class="line">        d[C]=cnt;</span><br><span class="line">        <span class="comment">//把行的链表改动       </span></span><br><span class="line">        <span class="keyword">if</span>(h[R]&lt;<span class="number">0</span>) h[R]=l[cnt]=r[cnt]=cnt;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            r[cnt]=h[R];</span><br><span class="line">            l[cnt]=l[h[R]];</span><br><span class="line">            r[l[h[R]]]=cnt;</span><br><span class="line">            l[h[R]]=cnt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> C)</span><span class="comment">//删除C列以及C列上有点的行</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        r[l[C]]=r[C]; l[r[C]]=l[C];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=d[C];i!=C;i=d[i])</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=r[i];j!=i;j=r[j])</span><br><span class="line">            &#123;</span><br><span class="line">                u[d[j]]=u[j];</span><br><span class="line">                d[u[j]]=d[j];</span><br><span class="line">                s[col[j]]--;<span class="comment">//是减得只剩下1吗（dei）</span></span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">resume</span><span class="params">(<span class="keyword">int</span> C)</span><span class="comment">//恢复C列以及C列上有点的行</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        r[l[C]]=C; l[r[C]]=C;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=d[C];i!=C;i=d[i])</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=r[i];j!=i;j=r[j])</span><br><span class="line">            &#123;</span><br><span class="line">                u[d[j]]=j;</span><br><span class="line">                d[u[j]]=j;</span><br><span class="line">                s[col[j]]++;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dance</span><span class="params">(<span class="keyword">int</span> deep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> C=r[<span class="number">0</span>];<span class="comment">//找第一个限制条件</span></span><br><span class="line">        <span class="keyword">if</span>(C&gt;<span class="number">2</span>*nn)<span class="comment">//如果所有的行已经被删完就统计答案（能不能&gt;2n）</span></span><br><span class="line">        &#123;</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,x,y;i&lt;deep;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//记录下来选的点的编号，用编号还原行列</span></span><br><span class="line">                x=ansk[i]%nn;</span><br><span class="line">                y=(ansk[i]<span class="number">-1</span>)/nn+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(x==<span class="number">0</span>) x=nn;</span><br><span class="line">                Ans[ans].a[y]=x;<span class="comment">//x和y是等价的，可以交换</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=C;i&lt;=nn;i=r[i])<span class="comment">//找到点最少的列</span></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">              这是一处剪枝，因为删掉点最少的列，就是为了满足这个限制条件</span></span><br><span class="line"><span class="comment">              需要枚举删掉的点就少一些，从而使得之后的剪枝更高效</span></span><br><span class="line"><span class="comment">              相当于把搜索树繁茂的地方留给叶子，而深度越深越容易被剪枝</span></span><br><span class="line"><span class="comment">              不加会T</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="keyword">if</span>(s[i]&lt;s[C]) C=i;</span><br><span class="line">        remove(C);<span class="comment">//删掉这一列</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=d[C];i!=C;i=d[i])<span class="comment">//枚举答案是这一列的哪个点，因为每一列只能选一个点，所以枚举选哪个</span></span><br><span class="line">        &#123;</span><br><span class="line">            ansk[deep]=row[i];<span class="comment">//记录答案，这个点编号是row[i]</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=r[i];j!=i;j=r[j]) remove(col[j]);<span class="comment">//这个点的行也得删了，把这行有点的列也删掉</span></span><br><span class="line">            dance(deep+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=r[i];j!=i;j=r[j]) resume(col[j]);<span class="comment">//回溯</span></span><br><span class="line">        &#125;</span><br><span class="line">        resume(C);<span class="comment">//回溯过程</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> out&amp;A,<span class="keyword">const</span> out&amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p=<span class="number">0</span>;<span class="keyword">while</span>(A.a[p]==B.a[p]) p++;</span><br><span class="line">    <span class="keyword">return</span> A.a[p]&lt;B.a[p];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">/// freopen(&quot;a.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;nn);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      nn*nn个格子，每个格子看作舞蹈链的一行</span></span><br><span class="line"><span class="comment">      总共有nn行nn列nn×2-1左对角nn×2-1右对角 共6×nn-2个限制</span></span><br><span class="line"><span class="comment">      把每个限制看作一列，进行精准覆盖</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    DLX::init(nn*nn,<span class="number">6</span>*nn<span class="number">-2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nn;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=nn;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            o++;</span><br><span class="line">            DLX::link(o,i);<span class="comment">//占据第i行</span></span><br><span class="line">            DLX::link(o,j+nn);<span class="comment">//占据第j列（能不能不写这一句）</span></span><br><span class="line">            DLX::link(o,i-j+<span class="number">3</span>*nn);<span class="comment">//占据第i-j+nn个左上到右下的对角线</span></span><br><span class="line">            DLX::link(o,i+j+<span class="number">4</span>*nn<span class="number">-2</span>);<span class="comment">//占据第i+j-1个右上到左下的对角线</span></span><br><span class="line">        &#125;</span><br><span class="line">    DLX::dance(<span class="number">0</span>);<span class="comment">//跳舞啦</span></span><br><span class="line">    sort(Ans+<span class="number">1</span>,Ans+ans+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">3</span>;i++,<span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>))</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=nn;j++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,Ans[i].a[j]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>后期我会自己尝试用dlx模板写出八皇后的</p>
+<h2 id="4-数独与DLX"><a href="#4-数独与DLX" class="headerlink" title="4 数独与DLX"></a>4 数独与DLX</h2><p>题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1784">https://www.luogu.com.cn/problem/P1784</a></p>
+<p>回想一下精确覆盖问题，它的要求是每一列恰好有一个1，那么我们可以考虑将每一列作为一个限制条件，那么将数独的限制条件套进去即可。</p>
+<p>考虑数独的限制条件：</p>
+<p>每一个空只能填一个数<br>每一行中不能出现重复的数字，而且只能填1<del>9<br>每一列中不能出现重复的数字，而且只能填1</del>9<br>每一个宫中不能出现重复的数字，而且只能填1~9<br>这样看好像不是很明显，我们将它转化一下：</p>
+<p>每一个空只能填一个数<br>每一行中必须出现1<del>9中的每个数字<br>每一列中必须出现1</del>9中的每个数字<br>每一个宫中必须出现1~9 中的每个数字<br>于是，我们就可以将矩阵中每一列的限制确定下来了。</p>
+<p>前 $81$ 列，第 $i$ 列为 $1$表示第 $i$ 个空填了一个数</p>
+<p>后 $81$ 列中，第$1$ 列表示第一行填了一个$1$ 、第 $2$ 列表示第一行填了一个 $2$、……第 $10$ 列表示第二行填了一个$1$、……第 $81$ 列表示第九行填了一个 $9$<br>再后面 $81$ 列中，第$1$ 列表示第一列填了一个$1$、第 $2$ 列表示第一列填了一个 $2$、……第 $10$ 列表示第二列填了一个$1$、……第 $81$ 列表示第九列填了一个 $9$<br>最后 $81$ 列中，第$1$ 列表示第一个宫填了一个$1$、第 $2$ 列表示第一个宫填了一个 $2$、……第 $10$ 列表示第二个宫填了一个$1$、……第 $81$ 列表示第九个宫填了一个9<br>于是我们就知道了每一列的意义，然后将每一种填法做成一行，跑一遍DLX就能得到答案了。</p>
+<p>打个比方，比如在第 $4$行第 $5$ 列处填一个$7$，那么首先新建一行，然后将这一行的第 $32$ 列、$81+34$ 列、$81 × 2 + 43$ 列以及 $81 × 3 + 43$列改成$1$，其他全部都是 $0$，即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129151921.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/GuZeng41/pic@master/img/20201129151921.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">wulala</span>&#123;</span><span class="keyword">int</span> x,y,z;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	node *d,*u,*l,*r;</span><br><span class="line">	<span class="keyword">int</span> line,col;</span><br><span class="line">	wulala x;<span class="comment">//这个x结构体是用来标记这个位置所在的行所表示的在数独中的操作</span></span><br><span class="line">	<span class="comment">//x.x,x.y,x.z表示在数独中的[x.x,x.y]位置放一个x.z</span></span><br><span class="line">	node():d(<span class="literal">NULL</span>),u(<span class="literal">NULL</span>),l(<span class="literal">NULL</span>),r(<span class="literal">NULL</span>),line(<span class="number">0</span>),col(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">node *matrix[<span class="number">750</span>][<span class="number">350</span>];</span><br><span class="line">wulala a[<span class="number">750</span>];</span><br><span class="line"><span class="keyword">int</span> shudu[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">750</span>][<span class="number">350</span>];</span><br><span class="line"><span class="keyword">int</span> n,m=<span class="number">324</span>;</span><br><span class="line"><span class="keyword">bool</span> v[<span class="number">350</span>];<span class="comment">//v数组用来记录哪些列已经有1了（这里的列是指矩阵中的）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gong</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">return</span> (x<span class="number">-1</span>)/<span class="number">3</span>*<span class="number">3</span>+(y<span class="number">-1</span>)/<span class="number">3</span>+<span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">9</span>;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;shudu[i][j]);</span><br><span class="line">		<span class="keyword">if</span>(shudu[i][j]!=<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			v[(i<span class="number">-1</span>)*<span class="number">9</span>+j]=<span class="literal">true</span>;<span class="comment">//标记这些列已经有1了</span></span><br><span class="line">			v[<span class="number">81</span>+(i<span class="number">-1</span>)*<span class="number">9</span>+shudu[i][j]]=<span class="literal">true</span>;</span><br><span class="line">			v[<span class="number">81</span>*<span class="number">2</span>+(j<span class="number">-1</span>)*<span class="number">9</span>+shudu[i][j]]=<span class="literal">true</span>;</span><br><span class="line">			v[<span class="number">81</span>*<span class="number">3</span>+(gong(i,j)<span class="number">-1</span>)*<span class="number">9</span>+shudu[i][j]]=<span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)<span class="comment">//构建矩阵</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">9</span>;j++)</span><br><span class="line">	<span class="keyword">if</span>(shudu[i][j]==<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=<span class="number">9</span>;k++)</span><br><span class="line">	<span class="keyword">if</span>(!v[<span class="number">81</span>+(i<span class="number">-1</span>)*<span class="number">9</span>+k]&amp;&amp;!v[<span class="number">81</span>*<span class="number">2</span>+(j<span class="number">-1</span>)*<span class="number">9</span>+k]&amp;&amp;!v[<span class="number">81</span>*<span class="number">3</span>+(gong(i,j)<span class="number">-1</span>)*<span class="number">9</span>+k])</span><br><span class="line">	<span class="comment">//如果这种方案中有某一列是被标记过的，这种方案就是不能选的</span></span><br><span class="line">	&#123;</span><br><span class="line">		n++;</span><br><span class="line">		<span class="built_in">map</span>[n][(i<span class="number">-1</span>)*<span class="number">9</span>+j]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">map</span>[n][<span class="number">81</span>+(i<span class="number">-1</span>)*<span class="number">9</span>+k]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">map</span>[n][<span class="number">81</span>*<span class="number">2</span>+(j<span class="number">-1</span>)*<span class="number">9</span>+k]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">map</span>[n][<span class="number">81</span>*<span class="number">3</span>+(gong(i,j)<span class="number">-1</span>)*<span class="number">9</span>+k]=<span class="number">1</span>;</span><br><span class="line">		a[n]=(wulala)&#123;i,j,k&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//=====================================================================</span></span><br><span class="line"><span class="comment">//以下为DLX算法模板，如果看不懂可以去文章开头的那个超链接里面看看</span></span><br><span class="line">node *head,*c[<span class="number">350</span>];</span><br><span class="line"><span class="keyword">int</span> tot[<span class="number">350</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	node *p;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		p=<span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">map</span>[i][j]==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			matrix[i][j]=<span class="keyword">new</span> node;</span><br><span class="line">			matrix[i][j]-&gt;line=i;matrix[i][j]-&gt;col=j;</span><br><span class="line">			matrix[i][j]-&gt;x=a[i];</span><br><span class="line">			<span class="keyword">if</span>(p==<span class="literal">NULL</span>)p=matrix[i][j],p-&gt;l=p-&gt;r=p;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				p-&gt;r-&gt;l=matrix[i][j];matrix[i][j]-&gt;r=p-&gt;r;</span><br><span class="line">				p-&gt;r=matrix[i][j];matrix[i][j]-&gt;l=p;</span><br><span class="line">				p=matrix[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> matrix[i][j]=<span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	p=head=<span class="keyword">new</span> node;p-&gt;l=p-&gt;r=p;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	<span class="keyword">if</span>(v[i])c[i]=<span class="literal">NULL</span>;<span class="comment">//假如这一列已经有1了，那么就不要这一列了2</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		c[i]=<span class="keyword">new</span> node();tot[i]=<span class="number">0</span>;</span><br><span class="line">		p-&gt;r-&gt;l=c[i];c[i]-&gt;r=p-&gt;r;</span><br><span class="line">		p-&gt;r=c[i];c[i]-&gt;l=p;p=c[i];</span><br><span class="line">		c[i]-&gt;col=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[j])<span class="keyword">continue</span>;<span class="comment">//被标记过的列就没必要遍历了，毕竟这一列半个1都不可能有</span></span><br><span class="line">		p=c[j];p-&gt;d=p-&gt;u=p;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">map</span>[i][j]==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			tot[j]++;</span><br><span class="line">			p-&gt;d-&gt;u=matrix[i][j];matrix[i][j]-&gt;d=p-&gt;d;</span><br><span class="line">			p-&gt;d=matrix[i][j];matrix[i][j]-&gt;u=p;</span><br><span class="line">			p=matrix[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">9</span>;j++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,shudu[i][j]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> anss;</span><br><span class="line">node *zhan[<span class="number">750</span>];</span><br><span class="line"><span class="keyword">int</span> tt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">del1</span><span class="params">(node *x)</span></span>&#123;x-&gt;l-&gt;r=x-&gt;r;x-&gt;r-&gt;l=x-&gt;l;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">del2</span><span class="params">(node *x)</span></span>&#123;x-&gt;d-&gt;u=x-&gt;u;x-&gt;u-&gt;d=x-&gt;d;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">reset1</span><span class="params">(node *x)</span></span>&#123;x-&gt;l-&gt;r=x;x-&gt;r-&gt;l=x;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">reset2</span><span class="params">(node *x)</span></span>&#123;x-&gt;u-&gt;d=x;x-&gt;d-&gt;u=x;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(node *x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(node *i=x-&gt;d;i!=x;i=i-&gt;d)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i-&gt;line==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">		zhan[++tt]=i;</span><br><span class="line">		del2(i),tot[i-&gt;col]--;</span><br><span class="line">		<span class="keyword">for</span>(node *j=i-&gt;r;j!=i;j=j-&gt;r)</span><br><span class="line">		del2(j),tot[j-&gt;col]--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(head-&gt;r==head)</span><br><span class="line">	&#123;</span><br><span class="line">		anss=<span class="literal">true</span>;</span><br><span class="line">		print();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	node *p=head-&gt;r;</span><br><span class="line">	<span class="keyword">for</span>(node *i=p-&gt;r;i!=head;i=i-&gt;r)</span><br><span class="line">	<span class="keyword">if</span>(tot[i-&gt;col]&lt;tot[p-&gt;col])p=i;</span><br><span class="line">	<span class="keyword">for</span>(node *i=p-&gt;d;i!=p;i=i-&gt;d)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> st=tt;</span><br><span class="line">		down(i);del1(c[i-&gt;col]);</span><br><span class="line">		<span class="keyword">for</span>(node *j=i-&gt;r;j!=i;j=j-&gt;r)</span><br><span class="line">		down(j),del1(c[j-&gt;col]);</span><br><span class="line">		zhan[++tt]=i;</span><br><span class="line">		del2(i),tot[i-&gt;col]--;</span><br><span class="line">		<span class="keyword">for</span>(node *j=i-&gt;r;j!=i;j=j-&gt;r)</span><br><span class="line">		del2(j),tot[j-&gt;col]--;</span><br><span class="line">		shudu[i-&gt;x.x][i-&gt;x.y]=i-&gt;x.z;<span class="comment">//记得标记一下这一次的选择</span></span><br><span class="line">		dfs();</span><br><span class="line">		<span class="keyword">if</span>(anss)<span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">for</span>(node *j=zhan[tt]-&gt;l;j!=zhan[tt];j=j-&gt;l)</span><br><span class="line">		reset1(c[j-&gt;col]);</span><br><span class="line">		reset1(c[zhan[tt]-&gt;col]);</span><br><span class="line">		<span class="keyword">while</span>(tt&gt;st)</span><br><span class="line">		&#123;</span><br><span class="line">			reset2(zhan[tt]),tot[zhan[tt]-&gt;col]++;</span><br><span class="line">			<span class="keyword">for</span>(node *j=zhan[tt]-&gt;r;j!=zhan[tt];j=j-&gt;r)</span><br><span class="line">			reset2(j),tot[j-&gt;col]++;</span><br><span class="line">			tt--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		n=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memset</span>(v,<span class="literal">false</span>,<span class="keyword">sizeof</span>(v));</span><br><span class="line">		<span class="built_in">memset</span>(<span class="built_in">map</span>,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="built_in">map</span>));</span><br><span class="line">		input();</span><br><span class="line">		work();</span><br><span class="line">		anss=<span class="literal">false</span>;tt=<span class="number">0</span>;</span><br><span class="line">		dfs();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里多给一些代码块供理解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rgi register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> il inline</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">10</span>][<span class="number">10</span>], stk[N];<span class="comment">//stk记录答案</span></span><br><span class="line"><span class="function">il <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  rgi x = <span class="number">0</span>, f = <span class="number">0</span>, ch;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch = getchar())) f |= ch == <span class="string">&#x27;-&#x27;</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>), ch = getchar();</span><br><span class="line">  <span class="keyword">return</span> f ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DLX</span> &#123;</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> MAXSIZE = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IT(i, A, x) for (i = A[x]; i != x; i = A[i])</span></span><br><span class="line">  <span class="keyword">int</span> n, m, tot, first[MAXSIZE + <span class="number">10</span>], siz[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="keyword">int</span> L[MAXSIZE + <span class="number">10</span>], R[MAXSIZE + <span class="number">10</span>], U[MAXSIZE + <span class="number">10</span>], D[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="keyword">int</span> col[MAXSIZE + <span class="number">10</span>], row[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    n = r, m = c;</span><br><span class="line">    <span class="keyword">for</span> (rgi i = <span class="number">0</span>; i &lt;= c; ++i) &#123;</span><br><span class="line">      L[i] = i - <span class="number">1</span>, R[i] = i + <span class="number">1</span>;</span><br><span class="line">      U[i] = D[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    L[<span class="number">0</span>] = c, R[c] = <span class="number">0</span>, tot = c;</span><br><span class="line">    <span class="built_in">memset</span>(first, <span class="number">0</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">    <span class="built_in">memset</span>(siz, <span class="number">0</span>, <span class="keyword">sizeof</span>(siz));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    col[++tot] = c, row[tot] = r, ++siz[c];</span><br><span class="line">    D[tot] = D[c], U[D[c]] = tot, U[tot] = c, D[c] = tot;</span><br><span class="line">    <span class="keyword">if</span> (!first[r])</span><br><span class="line">      first[r] = L[tot] = R[tot] = tot;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      R[tot] = R[first[r]], L[R[first[r]]] = tot;</span><br><span class="line">      L[tot] = first[r], R[first[r]] = tot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    rgi i, j;</span><br><span class="line">    L[R[c]] = L[c], R[L[c]] = R[c];</span><br><span class="line">    IT(i, D, c) IT(j, R, i) U[D[j]] = U[j], D[U[j]] = D[j], --siz[col[j]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">recover</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    rgi i, j;</span><br><span class="line">    IT(i, U, c) IT(j, L, i) U[D[j]] = D[U[j]] = j, ++siz[col[j]];</span><br><span class="line">    L[R[c]] = R[L[c]] = c;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">dance</span><span class="params">(<span class="keyword">int</span> dep)</span> </span>&#123;  <span class="comment">//dance即为递归地删除以及还原各个行列的过程</span></span><br><span class="line">    rgi i, j, c = R[<span class="number">0</span>];  <span class="comment">//这里开始要修改原DLX的模板了,均指向head的右节点</span></span><br><span class="line">    <span class="keyword">if</span> (!R[<span class="number">0</span>]) &#123;</span><br><span class="line">      <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; dep; ++i) &#123;<span class="comment">//本质上这个stk应该是三维的，在x,y位置放了v</span></span><br><span class="line">        <span class="keyword">int</span> x = (stk[i] - <span class="number">1</span>) / <span class="number">9</span> / <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> y = (stk[i] - <span class="number">1</span>) / <span class="number">9</span> % <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = (stk[i] - <span class="number">1</span>) % <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">        ans[x][y] = v;  <span class="comment">//stk的构建可以参考后面的GetID</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    IT(i, R, <span class="number">0</span>) <span class="keyword">if</span> (siz[i] &lt; siz[c]) c = i;</span><br><span class="line">    remove(c);</span><br><span class="line">    IT(i, D, c) &#123;</span><br><span class="line">      stk[dep] = row[i];</span><br><span class="line">      IT(j, R, i) remove(col[j]);</span><br><span class="line">      <span class="keyword">if</span> (dance(dep + <span class="number">1</span>)) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">      IT(j, L, i) recover(col[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    recover(c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; solver;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetId</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col, <span class="keyword">int</span> num)</span> </span>&#123;<span class="comment">//比模板多的</span></span><br><span class="line">  <span class="keyword">return</span> (row - <span class="number">1</span>) * <span class="number">9</span> * <span class="number">9</span> + (col - <span class="number">1</span>) * <span class="number">9</span> + num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> dx = (row - <span class="number">1</span>) / <span class="number">3</span> + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> dy = (col - <span class="number">1</span>) / <span class="number">3</span> + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> room = (dx - <span class="number">1</span>) * <span class="number">3</span> + dy;  <span class="comment">//当前坐标的宫的位置</span></span><br><span class="line">  <span class="keyword">int</span> id = GetId(row, col, num);</span><br><span class="line">  <span class="keyword">int</span> f1 = (row - <span class="number">1</span>) * <span class="number">9</span> + num;              <span class="comment">// task 1</span></span><br><span class="line">  <span class="keyword">int</span> f2 = <span class="number">81</span> + (col - <span class="number">1</span>) * <span class="number">9</span> + num;       <span class="comment">// task 2</span></span><br><span class="line">  <span class="keyword">int</span> f3 = <span class="number">81</span> * <span class="number">2</span> + (room - <span class="number">1</span>) * <span class="number">9</span> + num;  <span class="comment">// task 3</span></span><br><span class="line">  <span class="keyword">int</span> f4 = <span class="number">81</span> * <span class="number">3</span> + (row - <span class="number">1</span>) * <span class="number">9</span> + col;   <span class="comment">// task 4</span></span><br><span class="line">  solver.insert(id, f1); <span class="comment">//f都是列，id是行，就是i,j</span></span><br><span class="line">  solver.insert(id, f2);</span><br><span class="line">  solver.insert(id, f3);</span><br><span class="line">  solver.insert(id, f4);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  solver.build(<span class="number">729</span>, <span class="number">324</span>);</span><br><span class="line">  <span class="keyword">for</span> (rgi i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; ++i)</span><br><span class="line">    <span class="keyword">for</span> (rgi j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j) &#123;</span><br><span class="line">      ans[i][j] = read();</span><br><span class="line">      <span class="keyword">for</span> (rgi v = <span class="number">1</span>; v &lt;= <span class="number">9</span>; ++v) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ans[i][j] &amp;&amp; ans[i][j] != v) <span class="keyword">continue</span>;</span><br><span class="line">        Insert(i, j, v);<span class="comment">//Insert-&gt;insert三维转二维</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  solver.dance(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span> (rgi i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; ++i, <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">    <span class="keyword">for</span> (rgi j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j, <span class="built_in">putchar</span>(<span class="string">&#x27; &#x27;</span>)) <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans[i][j]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>有些使用数组模拟链表，有些使用结构体指针模拟。希望以后可以灵活使用。</p>
+<h3 id="例题二-靶形数独"><a href="#例题二-靶形数独" class="headerlink" title="例题二 靶形数独"></a>例题二 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1074">靶形数独</a></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1074">https://www.luogu.com.cn/problem/P1074</a></p>
+<p>这一题与 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1784">数独</a> 的模型构建 <strong>一模一样</strong> ，主要区别在于答案的更新。</p>
+<p>这一题可以开一个权值数组，每次找到一组数独的解时，</p>
+<p>每个位置上的数乘上对应的权值计入答案即可。</p>
+<p>就是在数独的基础上进行加权</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> il inline</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> oo = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> e[] = &#123;<span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>,  <span class="number">8</span>,</span><br><span class="line">                 <span class="number">8</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">9</span>,</span><br><span class="line">                 <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">7</span>,  <span class="number">6</span>,</span><br><span class="line">                 <span class="number">6</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>&#125;; <span class="comment">//权值</span></span><br><span class="line"><span class="keyword">int</span> ans = -oo, a[<span class="number">10</span>][<span class="number">10</span>], stk[N];</span><br><span class="line"><span class="function">il <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;             <span class="comment">//快读，输入数字</span></span><br><span class="line">  <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">0</span>, ch;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch = getchar())) f |= ch == <span class="string">&#x27;-&#x27;</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>), ch = getchar();</span><br><span class="line">  <span class="keyword">return</span> f ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetWeight</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col, <span class="keyword">int</span> num)</span> </span>&#123; <span class="comment">//得到权值</span></span><br><span class="line">  <span class="keyword">return</span> num * e[(row - <span class="number">1</span>) * <span class="number">9</span> + (col - <span class="number">1</span>)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DLX</span> &#123;</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> MAXSIZE = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IT(i, A, x) for (i = A[x]; i != x; i = A[i])</span></span><br><span class="line">  <span class="keyword">int</span> n, m, tot, first[MAXSIZE + <span class="number">10</span>], siz[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="keyword">int</span> L[MAXSIZE + <span class="number">10</span>], R[MAXSIZE + <span class="number">10</span>], U[MAXSIZE + <span class="number">10</span>], D[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="keyword">int</span> col[MAXSIZE + <span class="number">10</span>], row[MAXSIZE + <span class="number">10</span>];</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    n = r, m = c;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= c; ++i) &#123;</span><br><span class="line">      L[i] = i - <span class="number">1</span>, R[i] = i + <span class="number">1</span>;</span><br><span class="line">      U[i] = D[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    L[<span class="number">0</span>] = c, R[c] = <span class="number">0</span>, tot = c;</span><br><span class="line">    <span class="built_in">memset</span>(first, <span class="number">0</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">    <span class="built_in">memset</span>(siz, <span class="number">0</span>, <span class="keyword">sizeof</span>(siz));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;r, <span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    col[++tot] = c, row[tot] = r, ++siz[c];</span><br><span class="line">    D[tot] = D[c], U[D[c]] = tot, U[tot] = c, D[c] = tot;</span><br><span class="line">    <span class="keyword">if</span> (!first[r])</span><br><span class="line">      first[r] = L[tot] = R[tot] = tot;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      R[tot] = R[first[r]], L[R[first[r]]] = tot;</span><br><span class="line">      L[tot] = first[r], R[first[r]] = tot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    L[R[c]] = L[c], R[L[c]] = R[c];</span><br><span class="line">    IT(i, D, c) IT(j, R, i) U[D[j]] = U[j], D[U[j]] = D[j], --siz[col[j]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">recover</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    IT(i, U, c) IT(j, L, i) U[D[j]] = D[U[j]] = j, ++siz[col[j]];</span><br><span class="line">    L[R[c]] = R[L[c]] = c;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">dance</span><span class="params">(<span class="keyword">int</span> dep)</span> </span>&#123;  <span class="comment">//主要的更改,这里也不是Bool</span></span><br><span class="line">    <span class="keyword">int</span> i, j, c = R[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span> (!R[<span class="number">0</span>]) &#123;</span><br><span class="line">      <span class="keyword">int</span> cur_ans = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; dep; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> cur_row = (stk[i] - <span class="number">1</span>) / <span class="number">9</span> / <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur_col = (stk[i] - <span class="number">1</span>) / <span class="number">9</span> % <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur_num = (stk[i] - <span class="number">1</span>) % <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">        cur_ans += GetWeight(cur_row, cur_col, cur_num);</span><br><span class="line">      &#125;</span><br><span class="line">      ans = max(ans, cur_ans);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    IT(i, R, <span class="number">0</span>) <span class="keyword">if</span> (siz[i] &lt; siz[c]) c = i;</span><br><span class="line">    remove(c);</span><br><span class="line">    IT(i, D, c) &#123;</span><br><span class="line">      stk[dep] = row[i];</span><br><span class="line">      IT(j, R, i) remove(col[j]);</span><br><span class="line">      dance(dep + <span class="number">1</span>);<span class="comment">//也不需要return 1;</span></span><br><span class="line">      IT(j, L, i) recover(col[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    recover(c);</span><br><span class="line">  &#125;</span><br><span class="line">&#125; solver;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetId</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (row - <span class="number">1</span>) * <span class="number">9</span> * <span class="number">9</span> + (col - <span class="number">1</span>) * <span class="number">9</span> + num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> dx = (row - <span class="number">1</span>) / <span class="number">3</span> + <span class="number">1</span>;    <span class="comment">// r</span></span><br><span class="line">  <span class="keyword">int</span> dy = (col - <span class="number">1</span>) / <span class="number">3</span> + <span class="number">1</span>;    <span class="comment">// c</span></span><br><span class="line">  <span class="keyword">int</span> room = (dx - <span class="number">1</span>) * <span class="number">3</span> + dy;  <span class="comment">// room</span></span><br><span class="line">  <span class="keyword">int</span> id = GetId(row, col, num);</span><br><span class="line">  <span class="keyword">int</span> f1 = (row - <span class="number">1</span>) * <span class="number">9</span> + num;            <span class="comment">// task 1</span></span><br><span class="line">  <span class="keyword">int</span> f2 = <span class="number">81</span> + (col - <span class="number">1</span>) * <span class="number">9</span> + num;       <span class="comment">// task 2</span></span><br><span class="line">  <span class="keyword">int</span> f3 = <span class="number">81</span> * <span class="number">2</span> + (room - <span class="number">1</span>) * <span class="number">9</span> + num;  <span class="comment">// task 3</span></span><br><span class="line">  <span class="keyword">int</span> f4 = <span class="number">81</span> * <span class="number">3</span> + (row - <span class="number">1</span>) * <span class="number">9</span> + col;   <span class="comment">// task 4</span></span><br><span class="line">  solver.insert(id, f1);</span><br><span class="line">  solver.insert(id, f2);</span><br><span class="line">  solver.insert(id, f3);</span><br><span class="line">  solver.insert(id, f4);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  solver.build(<span class="number">729</span>, <span class="number">324</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; ++i)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j) &#123;</span><br><span class="line">      a[i][j] = read();</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">1</span>; v &lt;= <span class="number">9</span>; ++v) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i][j] &amp;&amp; v != a[i][j]) <span class="keyword">continue</span>;</span><br><span class="line">        Insert(i, j, v);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  solver.dance(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans == -oo ? <span class="number">-1</span> : ans);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>后续应该还会更新。</p>
+
+  
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\posts\17772.html" title="Broken Necklace" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Broken Necklace</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/posts/52060.html>http://example.com/posts/52060.html</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
+  
+  
+  
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-29T15:25:40+08:00">
+  <a class='notlink'>
+    <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月29日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/dlx/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>dlx</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/posts/52060.html&title=dlx与精准覆盖 - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/posts/52060.html&title=dlx与精准覆盖 - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/posts/52060.html&title=dlx与精准覆盖 - Guzeng41的笔记&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+  <div class="prev-next">
+    
+    
+    <a class='next' href='/posts/29814.html'>
+      <p class='title'>USACO1.5<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>USACO Training 1.5.4 Checker ChallengeDescription
+检查一个如下的6 x 6的跳棋棋盘，有六个棋子被放置在棋盘上，使得每行、每列只有一个，每条对角...</p>
+    </a>
+    
+  </div>
+  
+</article>
+
+
+
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fal fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+</div>
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    
+    
+      
+        <div class='copyright'>
+        <p>Copyright © 2020 <a href="/">GuZeng41</a></p>
+
+        </div>
+      
+    
+      
+        
+          <div><div><p>本站使用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://volantis.js.org/" data-pjax-state="">Volantis</a> 作为主题 | 由 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/zh-cn/" data-pjax-state="">Hexo</a> 强力驱动</p> </div></div>
+        
+      
+    
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+      loadScript('/js/issues.js');
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+    pjax_scrollrebeal();
+  });
+</script>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "CWkvH9J7sQW4z1w5Yqb0pW7R-gzGzoHsz",
+      appKey: "nkRCkVlHutFY1wFwTPdEuct1",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps,
+      master: '[de35cff18b57b04bbb9a61adbbc5889a]',
+      friends: '[fc2c9b067f65c9e2d7057ba797f7cfca]'
+    })
+  }
+
+  function newcomment() {
+
+function queryLeanCloud(k) {
+  let root = this;
+  let len = arguments.length;
+  if (len == 1) {
+    let notExist = new AV.Query("Comment");
+    notExist.doesNotExist('rid');
+    let isEmpty = new AV.Query("Comment");
+    isEmpty.equalTo('rid', '');
+    let q = AV.Query.or(notExist, isEmpty);
+    if (k === '*') q.exists('url');
+    else q.equalTo('url', decodeURI(k));
+    q.addDescending('createdAt');
+    q.addDescending('insertedAt');
+    return q;
+  } else {
+    let ids = JSON.stringify(arguments[1]).replace(/(\[|\])/g, '');
+    let cql = `select * from ${root['config']['clazzName']} where rid in (${ids}) order by -createdAt,-createdAt`;
+    return AV.Query.doCloudQuery(cql)
+  }
+}
+var valine = new Valine({
+      el: '#valine_container_ba',
+      notify: false,
+      verify: false,
+      app_id: 'CWkvH9J7sQW4z1w5Yqb0pW7R-gzGzoHsz',
+      app_key: 'nkRCkVlHutFY1wFwTPdEuct1',
+      placeholder: '发表您的意见，让我们一起交流，共同提高吧...',
+      serverURLs: 'https://toxicpl.heson.xyz'
+});
+
+//判断博主，heson改为自己的昵称
+function bozhu(e){
+    if (e == "heson"){
+        nick = e + '[博主]'
+        return nick;
+    } else {
+      return e
+    }
+}
+
+//判断网址
+function wangzhi(e){
+    http = e.slice(0,4)
+    https = e.slice(0,5)
+    if (http == "http" || https == "https" ){
+         return e
+    } else if (e == "" || e == null || e == undefined){
+      return e
+    } else {
+      e = 'http://'+ e
+      return e
+    }
+}
+
+
+
+
+//查询评论
+valine.Q('*').limit(7).find().then(function (comments) {
+  var hotComments = $("#hot-comments");
+  for (var i = 0; i < comments.length; i++) {
+    if (i === 0) {
+      console.log(comments[0]);
+    }
+    var nick = bozhu(comments[i]._serverData.nick);
+    var content = comments[i]._serverData.comment;
+    var newcontent = content.replace(/<[^>]+>/g,"").replace(/:.*?:/g,"[表情]").substring(0, 50);
+    var url = comments[i]._serverData.url;
+    var link = wangzhi(comments[i]._serverData.link);
+    var updatedAt = timeago(comments[i].updatedAt);
+    var commentId = '#' + comments[i].id;
+    hotComments.append('<div class="card-comment-item"><div class="item-header-text"><a href="'+ link +'" target="_blank" rel="nofollow noopener noreferrer" class="newcomment" >' + nick + '</a>&nbsp;发表于' + updatedAt + '</div><div class="item-text"><a href="' + url + commentId +'"  rel="nofollow" style="color:#717171" class="comments-detail" >' + newcontent + '</a></div></div>');
+  }
+});
+};
+
+
+
+  $(function () {
+    pjax_valine();
+    newcomment();
+  });
+</script>
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'C1qWqsDatomXVctTafBuJADI-gzGzoHsz',
+    app_key: 'J4CujIoElz1Wo7yLUbY4SOO5',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://example.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/bb/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+       
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+          newcomment();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
