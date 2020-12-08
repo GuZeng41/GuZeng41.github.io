@@ -16,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>schedule - Guzeng41的笔记</title>
+  <title>集合搜和 - Guzeng41的笔记</title>
+  
+    <meta name="keywords" content="dfs">
   
 
   
@@ -407,7 +409,7 @@
 
   
   
-      <div class='cover-wrapper page featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
@@ -483,8 +485,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">集合搜和</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -751,6 +753,20 @@
 
 
 
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        
+    </div>
+  </section>
+
 
   
 
@@ -759,8 +775,8 @@
 
 <div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-page"
-  id="page" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
@@ -770,7 +786,7 @@
     
     
       <h1 class="title">
-        schedule
+        集合搜和
       </h1>
       <div class='new-meta-box'>
         
@@ -794,7 +810,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月9日</p>
+    <p>发布于：2020年12月8日</p>
   </a>
 </div>
 
@@ -805,7 +821,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="schedule" data-path="/schedule/">
+      <div id="lc-pv" data-title="集合搜和" data-path="/posts/47827.html">
         <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -824,8 +840,62 @@
   
 
   
+  <h1 id="USACO-Training-2-2-2-Subset-Sums"><a href="#USACO-Training-2-2-2-Subset-Sums" class="headerlink" title="USACO Training 2.2.2 Subset Sums"></a>USACO Training 2.2.2 Subset Sums</h1><p>Description</p>
+<p>对于从1到N (1 &lt;= N &lt;= 39) 的连续整数集合，能划分成两个子集合，且保证每个集合的数字和是相等的。举个例子，如果N=3，对于{1，2，3}能划分成两个子集合，他们每个的所有数字和是相等的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;3&#125; 和 &#123;1,2&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是唯一一种分法（交换集合位置被认为是同一种划分方案，因此不会增加划分方案总数）如果N=7，有四种方法能划分集合{1，2，3，4，5，6，7}，每一种分法的子集合各数字和是相等的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;1,6,7&#125; 和 &#123;2,3,4,5&#125; &#123;注 1+6+7&#x3D;2+3+4+5&#125;</span><br><span class="line">&#123;2,5,7&#125; 和 &#123;1,3,4,6&#125;</span><br><span class="line">&#123;3,4,7&#125; 和 &#123;1,2,5,6&#125;</span><br><span class="line">&#123;1,2,4,7&#125; 和 &#123;3,5,6&#125;</span><br></pre></td></tr></table></figure>
+
+<p>给出N，你的程序应该输出划分方案总数，如果不存在这样的划分方案，则输出0。<strong>程序不能预存结果直接输出。</strong></p>
+<p>Input</p>
+<p>输入文件只有一行，且只有一个整数N</p>
+<p>Output</p>
+<p>输出划分方案总数，如果不存在则输出0。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<p>问题等价于查找和为总和/2的子集个数，当然如果和为奇数就肯定无解。</p>
+<p>一开始使用了普通的dfs做</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, k, ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">45</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sum &gt; k)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (num &gt; n)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (sum == k)</span><br><span class="line">    &#123;</span><br><span class="line">        ans++;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(num + <span class="number">1</span>, sum + num + <span class="number">1</span>);</span><br><span class="line">    dfs(num + <span class="number">1</span>, sum);  <span class="comment">//要搜索两个，否则会一路return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">if</span> ((<span class="number">1</span> + n) * n % <span class="number">4</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        k = (<span class="number">1</span> + n) * n / <span class="number">4</span>, dfs(<span class="number">0</span>, <span class="number">0</span>), <span class="built_in">cout</span> &lt;&lt; ans/<span class="number">2</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>显然是要t掉的，但还是练一下搜索把，</p>
+
   
   
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\posts\17772.html" title="Broken Necklace" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Broken Necklace</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/posts/47827.html>http://example.com/posts/47827.html</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
   
   
   
@@ -835,10 +905,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T23:39:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-08T10:59:18+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月9日</p>
+    <p>更新于：2020年12月8日</p>
   </a>
 </div>
 
@@ -846,6 +916,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/dfs/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>dfs</p></a></div>
+
 
         
       
@@ -857,7 +930,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/schedule/index.html&title=schedule - Guzeng41的笔记&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/posts/47827.html&title=集合搜和 - Guzeng41的笔记&summary="
           
           >
           
@@ -869,7 +942,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/schedule/index.html&title=schedule - Guzeng41的笔记&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/posts/47827.html&title=集合搜和 - Guzeng41的笔记&summary="
           
           >
           
@@ -881,7 +954,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/schedule/index.html&title=schedule - Guzeng41的笔记&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/posts/47827.html&title=集合搜和 - Guzeng41的笔记&summary="
           
           >
           
@@ -909,6 +982,18 @@
   
 
   
+  <div class="prev-next">
+    
+    
+    <a class='next' href='/posts/18119.html'>
+      <p class='title'>USACO2-2<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>USACO Training 2.2.1 Preface NumberingDescription
+一类书的序言是以罗马数字标页码的。传统罗马数字用单个字母表示特定的数值，以下是标准数字表:
+1...</p>
+    </a>
+    
+  </div>
+  
 </article>
 
 
@@ -927,10 +1012,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   

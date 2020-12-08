@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>schedule - Guzeng41的笔记</title>
+  <title>USACO2-2 - Guzeng41的笔记</title>
   
 
   
@@ -407,7 +407,7 @@
 
   
   
-      <div class='cover-wrapper page featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
@@ -483,8 +483,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">USACO2-2</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -751,6 +751,20 @@
 
 
 
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        
+    </div>
+  </section>
+
 
   
 
@@ -759,8 +773,8 @@
 
 <div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-page"
-  id="page" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
@@ -770,7 +784,7 @@
     
     
       <h1 class="title">
-        schedule
+        USACO2-2
       </h1>
       <div class='new-meta-box'>
         
@@ -787,6 +801,13 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fal fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/USACO/">USACO</a>
+    </a>
+  </div>
+
 
           
         
@@ -794,7 +815,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月9日</p>
+    <p>发布于：2020年12月8日</p>
   </a>
 </div>
 
@@ -805,7 +826,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="schedule" data-path="/schedule/">
+      <div id="lc-pv" data-title="USACO2-2" data-path="/posts/18119.html">
         <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -824,8 +845,150 @@
   
 
   
+  <h1 id="USACO-Training-2-2-1-Preface-Numbering"><a href="#USACO-Training-2-2-1-Preface-Numbering" class="headerlink" title="USACO Training 2.2.1 Preface Numbering"></a>USACO Training 2.2.1 Preface Numbering</h1><p>Description</p>
+<p>一类书的序言是以罗马数字标页码的。传统罗马数字用单个字母表示特定的数值，以下是标准数字表:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I 1  L 50  M 1000</span><br><span class="line">V 5  C 100</span><br><span class="line">X 10 D 500</span><br></pre></td></tr></table></figure>
+
+<p>最多3个可以表示为10n的数字(I,X,C,M)可以连续放在一起，表示它们的和:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">III&#x3D;3</span><br><span class="line">CCC&#x3D;300</span><br></pre></td></tr></table></figure>
+
+<p>可表示为5x10n的字符(V,L,D)从不连续出现。</p>
+<p>除了下一个规则，一般来说，字符以递减的顺序接连出现:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CCLXVIII &#x3D; 100+100+50+10+5+1+1+1 &#x3D; 268</span><br></pre></td></tr></table></figure>
+
+<p>有时，一个可表示为10n的数出现在一个比它大1级或2级的数前(I在V或X前面，X在L或C前面，等等)。在这种情况下，数值等于后面的那个数减去前面的那个数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IV &#x3D; 4</span><br><span class="line">IX &#x3D; 9</span><br><span class="line">XL &#x3D; 40</span><br></pre></td></tr></table></figure>
+
+<p>像XD, IC, 和XM这样的表达是非法的，因为前面的数比后面的数小太多。对于XD(490的错误表达)，可以写成 CDXC; 对于IC(99的错误表达)，可以写成XCIX; 对于XM(990的错误表达)，可以写成CMXC。</p>
+<p>给定N(1 &lt;= N &lt; 3,500)， 序言的页码数，请统计在第1页到第N页中，有几个I出现，几个V出现，等等 (从小到大的顺序)。不要输出并没有出现过的字符。</p>
+<p>比如N = 5, 那么页码数为: I, II, III, IV, V. 总共有7个I出现，2个V出现。</p>
+<p>Input</p>
+<p>一个整数N。</p>
+<p>Output</p>
+<p>每行一个字符和一个数字k，表示这个字符出现了k次。字符必须按数字表中的递增顺序输出。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I 7</span><br><span class="line">V 2</span><br></pre></td></tr></table></figure>
+
+<p>把罗马数字当成十进制做。。别忘了开long long int</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s[<span class="number">5</span>][<span class="number">11</span>]=&#123;        <span class="comment">//把罗马数字当成十进制。</span></span><br><span class="line">    &#123;&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;&quot;</span>,<span class="string">&quot;I&quot;</span>,<span class="string">&quot;II&quot;</span>,<span class="string">&quot;III&quot;</span>,<span class="string">&quot;IV&quot;</span>,<span class="string">&quot;V&quot;</span>,<span class="string">&quot;VI&quot;</span>,<span class="string">&quot;VII&quot;</span>,<span class="string">&quot;VIII&quot;</span>,<span class="string">&quot;IX&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;&quot;</span>,<span class="string">&quot;X&quot;</span>,<span class="string">&quot;XX&quot;</span>,<span class="string">&quot;XXX&quot;</span>,<span class="string">&quot;XL&quot;</span>,<span class="string">&quot;L&quot;</span>,<span class="string">&quot;LX&quot;</span>,<span class="string">&quot;LXX&quot;</span>,<span class="string">&quot;LXXX&quot;</span>,<span class="string">&quot;XC&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;CC&quot;</span>,<span class="string">&quot;CCC&quot;</span>,<span class="string">&quot;CD&quot;</span>,<span class="string">&quot;D&quot;</span>,<span class="string">&quot;DC&quot;</span>,<span class="string">&quot;DCC&quot;</span>,<span class="string">&quot;DCCC&quot;</span>,<span class="string">&quot;CM&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;&quot;</span>,<span class="string">&quot;M&quot;</span>,<span class="string">&quot;MM&quot;</span>,<span class="string">&quot;MMM&quot;</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">string</span> l=<span class="string">&quot;IVXLCDM&quot;</span>;  <span class="comment">//罗马数字列表，方便输出</span></span><br><span class="line"><span class="keyword">int</span> c[<span class="number">300</span>];           <span class="comment">//统计数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Count</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123; <span class="comment">//将字符串每一位统计</span></span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;s.size();i++) c[(ll)s[i]]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Calc</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> now=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        Count(s[now][n%<span class="number">10</span>]);</span><br><span class="line">        now++,n/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) Calc(i); <span class="comment">//对每一个数字统计</span></span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;l.size();i++)&#123; <span class="comment">//按顺序输出</span></span><br><span class="line">        <span class="keyword">if</span>(c[(ll)l[i]]&gt;<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c %d\n&quot;</span>,l[i],c[(ll)l[i]]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="USACO-Training-2-2-2-Subset-Sums"><a href="#USACO-Training-2-2-2-Subset-Sums" class="headerlink" title="USACO Training 2.2.2 Subset Sums"></a>USACO Training 2.2.2 Subset Sums</h1><p>Description</p>
+<p>对于从1到N (1 &lt;= N &lt;= 39) 的连续整数集合，能划分成两个子集合，且保证每个集合的数字和是相等的。举个例子，如果N=3，对于{1，2，3}能划分成两个子集合，他们每个的所有数字和是相等的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;3&#125; 和 &#123;1,2&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是唯一一种分法（交换集合位置被认为是同一种划分方案，因此不会增加划分方案总数）如果N=7，有四种方法能划分集合{1，2，3，4，5，6，7}，每一种分法的子集合各数字和是相等的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;1,6,7&#125; 和 &#123;2,3,4,5&#125; &#123;注 1+6+7&#x3D;2+3+4+5&#125;</span><br><span class="line">&#123;2,5,7&#125; 和 &#123;1,3,4,6&#125;</span><br><span class="line">&#123;3,4,7&#125; 和 &#123;1,2,5,6&#125;</span><br><span class="line">&#123;1,2,4,7&#125; 和 &#123;3,5,6&#125;</span><br></pre></td></tr></table></figure>
+
+<p>给出N，你的程序应该输出划分方案总数，如果不存在这样的划分方案，则输出0。<strong>程序不能预存结果直接输出。</strong></p>
+<p>Input</p>
+<p>输入文件只有一行，且只有一个整数N</p>
+<p>Output</p>
+<p>输出划分方案总数，如果不存在则输出0。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<p>问题等价于查找和为总和/2的子集个数，当然如果和为奇数就肯定无解。</p>
+<p>一开始使用了普通的dfs做</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, k, ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">45</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sum &gt; k)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (num &gt; n)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (sum == k)</span><br><span class="line">    &#123;</span><br><span class="line">        ans++;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(num + <span class="number">1</span>, sum + num + <span class="number">1</span>);</span><br><span class="line">    dfs(num + <span class="number">1</span>, sum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">if</span> ((<span class="number">1</span> + n) * n % <span class="number">4</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        k = (<span class="number">1</span> + n) * n / <span class="number">4</span>, dfs(<span class="number">0</span>, <span class="number">0</span>), <span class="built_in">cout</span> &lt;&lt; ans/<span class="number">2</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>显然是要t掉的，但还是练一下搜索把，</p>
+<p>然后其实可以用记忆化搜索，下次补上，这次直接学dp去了。。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">40</span>], dp[<span class="number">45</span>][<span class="number">3000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        a[i] = i;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n * (n + <span class="number">1</span>) / <span class="number">2</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">if</span> (j &gt;= a[i])</span><br><span class="line">                dp[i][j] += dp[i - <span class="number">1</span>][j - a[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (!n * (n + <span class="number">1</span>) % <span class="number">4</span> )</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dp[n][n * (n + <span class="number">1</span>) / <span class="number">4</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="USACO-Training-2-2-3-Runaround-Numbers"><a href="#USACO-Training-2-2-3-Runaround-Numbers" class="headerlink" title="USACO Training 2.2.3 Runaround Numbers"></a>USACO Training 2.2.3 Runaround Numbers</h1><p>Description</p>
+<p>循环数是那些不包括0这个数字的没有重复数字的整数 (比如说, 81362) 并且同时具有一个有趣的性质, 就像这个例子:</p>
+<p>如果你从最左边的数字开始 ( 在这个例子中是8) 数最左边这个数字到右边(回到最左边如果数到了最右边),你会停止在另一个新的数字(如果没有停在一个不同的数字上，这个数就不是循环数).就像:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">8 1 3 6 2 从最左边接下去数8个数字: 1 3 6 2 8 1 3 6 所以下一个数字是6.</span><br><span class="line">重复这样做 (这次从“6”开始数6个数字) 并且你会停止在一个新的数字上: 2 8 1 3 6 2, 也就是2.</span><br><span class="line">再这样做 (这次数两个): 8 1;再一次 (这次一个): 3;</span><br><span class="line">又一次: 6 2 8 这时你回到了起点, 在从每一个数字开始数1次之后. </span><br></pre></td></tr></table></figure>
+
+<p>如果你在从每一个数字开始数一次以后没有回到起点, 你的数字不是一个循环数。</p>
+<p>给你一个数字 M (在1到9位之间), 找出第一个比 M大的循环数, 并且一定能用一个无符号长整形数装下。</p>
+<p>Input</p>
+<p>仅仅一行, 包括M</p>
+<p>Output</p>
+<p>仅仅一行，包括第一个比M大的循环数。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">81361</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">81362</span><br></pre></td></tr></table></figure>
+
+<p>真的没啥可以说的，，模拟把</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">while</span> (n)</span><br><span class="line">    &#123;</span><br><span class="line">        b[len] = n % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">10</span> == <span class="number">0</span> || vis[n % <span class="number">10</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        vis[b[len]] = <span class="literal">true</span>;</span><br><span class="line">        ++len;</span><br><span class="line">        n /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> p = len - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        vis[b[p]] = <span class="literal">false</span>;</span><br><span class="line">        p = ((p - b[p]) % len + len) % len;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p != len - <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (check(++n))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="USACO-Training-2-2-4-Party-Lamps"><a href="#USACO-Training-2-2-4-Party-Lamps" class="headerlink" title="USACO Training 2.2.4 Party Lamps"></a>USACO Training 2.2.4 Party Lamps</h1><p>Description</p>
+<p>在IOI98的节日宴会上，我们有N(10&lt;=N&lt;=100)盏彩色灯，他们分别从1到N被标上号码。这些灯都连接到四个按钮：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">按钮1：当按下此按钮，将改变所有的灯：本来亮着的灯就熄灭，本来是关着的灯被点亮。 </span><br><span class="line">按钮2：当按下此按钮，将改变所有奇数号的灯。</span><br><span class="line">按钮3：当按下此按钮，将改变所有偶数号的灯。</span><br><span class="line">按钮4：当按下此按钮，将改变所有序号是3*K+1(K&gt;&#x3D;0)的灯。例如：1,4,7...</span><br></pre></td></tr></table></figure>
+
+<p>一个计数器C记录按钮被按下的次数。当宴会开始，所有的灯都亮着，此时计数器C为0。</p>
+<p>你将得到计数器C(0&lt;=C&lt;=10000)上的数值和经过若干操作后所有灯的状态。写一个程序去找出所有灯最后可能的与所给出信息相符的状态，并且没有重复。</p>
+<p>Input</p>
+<p>不会有灯会在输入中出现两次。</p>
+<p>第一行: N。</p>
+<p>第二行: C最后显示的数值。</p>
+<p>第三行: 最后亮着的灯,用一个空格分开，以-1为结束。</p>
+<p>第四行: 最后关着的灯,用一个空格分开，以-1为结束。</p>
+<p>Output</p>
+<p>每一行是所有灯可能的最后状态(没有重复)。每一行有N个字符，第1个字符表示1号灯，最后一个字符表示N号灯。0表示关闭，1表示亮着。这些行必须从小到大排列（看作是二进制数）。</p>
+<p>如果没有可能的状态，则输出一行’IMPOSSIBLE’。</p>
+<p>Sample Input 1 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">1</span><br><span class="line">-1</span><br><span class="line">7 -1</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0000000000</span><br><span class="line">0101010101</span><br><span class="line">0110110110</span><br></pre></td></tr></table></figure>
+
+<p>Hint</p>
+<p>输入样例中，有10盏灯，只有1个按钮被按下。最后7号灯是关着的。</p>
+<p>对应输出样例中，有三种可能的状态：</p>
+<p>所有灯都关着</p>
+<p>1,4,7,10号灯关着，2,3,5,6,8,9亮着。</p>
+<p>所有的操作做偶数次就和原状态一致了，所以最多只有8种情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">120</span>;</span><br><span class="line"><span class="keyword">int</span> n,c;</span><br><span class="line"><span class="keyword">int</span> a[maxn],b[maxn],top;  </span><br><span class="line"><span class="built_in">string</span> f[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> temp=<span class="string">&quot;&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)	temp+=<span class="keyword">char</span>(b[i]+<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">	f[++top]=temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; c;</span><br><span class="line">	<span class="keyword">int</span> ok;</span><br><span class="line">	<span class="built_in">memset</span>(a,<span class="number">-1</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">cin</span> &gt;&gt; ok &amp;&amp; ok!=<span class="number">-1</span> )	a[ok]=<span class="number">1</span>;<span class="comment">//亮</span></span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">cin</span> &gt;&gt; ok &amp;&amp; ok!=<span class="number">-1</span> )	a[ok]=<span class="number">0</span>;<span class="comment">//灭</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">1</span>;j++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> q=<span class="number">0</span>;q&lt;=<span class="number">1</span>;q++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> w=<span class="number">0</span>;w&lt;=<span class="number">1</span>;w++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i+j+q+w&gt;c)	<span class="keyword">continue</span>;<span class="comment">//次数太多</span></span><br><span class="line">			<span class="keyword">if</span>( (i+j)%<span class="number">2</span>==(q+w)%<span class="number">2</span>&amp;&amp;c%<span class="number">2</span>==<span class="number">1</span> )<span class="comment">//那么i+j+q是偶数</span></span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>( (i+j)%<span class="number">2</span>!=(q+w)%<span class="number">2</span>&amp;&amp;c%<span class="number">2</span>==<span class="number">0</span> )<span class="comment">//那么i+j+q是奇数</span></span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)	b[i]=<span class="number">1</span>;<span class="comment">//初始都是开灯</span></span><br><span class="line">			<span class="keyword">if</span>(i)	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)	b[i]^=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(j)	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i+=<span class="number">2</span>)	b[i]^=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(q)	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i+=<span class="number">2</span>)	b[i]^=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(w)	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i+=<span class="number">3</span>)	b[i]^=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> s=<span class="number">1</span>;s&lt;=n;s++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>( a[s]==<span class="number">-1</span> )	<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">if</span>( a[s]!=b[s] )	flag=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(flag)	run();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(f+<span class="number">1</span>,f+<span class="number">1</span>+top);</span><br><span class="line">	<span class="keyword">if</span>( top==<span class="number">0</span> )	<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;IMPOSSIBLE&quot;</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=top;i++)	<span class="built_in">cout</span>&lt;&lt;f[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
   
   
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\posts\46647.html" title="USACO1.2" rel="bookmark "><img src="https://cdn.luogu.com.cn/upload/pic/69260.png" class="lazyload" data-srcset="https://cdn.luogu.com.cn/upload/pic/69260.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">USACO1.2</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/posts/18119.html>http://example.com/posts/18119.html</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
   
   
   
@@ -835,10 +998,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T23:39:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-08T10:57:28+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月9日</p>
+    <p>更新于：2020年12月8日</p>
   </a>
 </div>
 
@@ -857,7 +1020,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/schedule/index.html&title=schedule - Guzeng41的笔记&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/posts/18119.html&title=USACO2-2 - Guzeng41的笔记&summary="
           
           >
           
@@ -869,7 +1032,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/schedule/index.html&title=schedule - Guzeng41的笔记&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/posts/18119.html&title=USACO2-2 - Guzeng41的笔记&summary="
           
           >
           
@@ -881,7 +1044,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/schedule/index.html&title=schedule - Guzeng41的笔记&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/posts/18119.html&title=USACO2-2 - Guzeng41的笔记&summary="
           
           >
           
@@ -909,6 +1072,24 @@
   
 
   
+  <div class="prev-next">
+    
+    <a class='prev' href='/posts/47827.html'>
+      <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>集合搜和</p>
+      <p class='content'>USACO Training 2.2.2 Subset SumsDescription
+对于从1到N (1 &lt;= N &lt;= 39) 的连续整数集合，能划分成两个子集合，且保证每个集合...</p>
+    </a>
+    
+    
+    <a class='next' href='/posts/26551.html'>
+      <p class='title'>题解07<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>B. Suffix OperationsCF B题
+大意为一个长度为n的数组，可以给从某一个数字起至末尾所有数+-1，可以在操作前更换一个数字，使得+-1操作的次数最小，输出最小操作数。
+思路：...</p>
+    </a>
+    
+  </div>
+  
 </article>
 
 
@@ -927,10 +1108,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   
